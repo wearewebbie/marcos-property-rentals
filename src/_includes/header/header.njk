@@ -1,23 +1,27 @@
-<nav>
-    <ul>
-        {%- for item in navigation %}
-        {%- set isCurrent = false %}
-        {%- if item.url == '/' %}
-        {%- if page.url == '/' %}
-        {%- set isCurrent = true %}
-        {%- endif %}
-        {%- else %}
-        {%- if page.url.startsWith(item.url) %}
-        {%- set isCurrent = true %}
-        {%- endif %}
-        {%- endif %}
-        <li>
-            <a href="{{ item.url }}" class="
+<nav class="px-[40px] py-[20px]">
+    <div class="flex flex-row justify-between gap-[20px]">
+        <p class="heading-6-bold">Marcos Property Rentals</p>
+        {# {% image "src/assets/images/webbie-logo.png", "Description of image", "h-[20px]" %} #}
+        <ul class="flex-row gap-[20px] hidden lg:flex">
+            {%- for item in navigation %}
+            {%- set isCurrent = false %}
+            {%- if item.url == '/' %}
+            {%- if page.url == '/' %}
+            {%- set isCurrent = true %}
+            {%- endif %}
+            {%- else %}
+            {%- if page.url.startsWith(item.url) %}
+            {%- set isCurrent = true %}
+            {%- endif %}
+            {%- endif %}
+            <li>
+                <a href="{{ item.url }}" class="
             {%- if item.type == 'cta' %} text-pink-500{% endif %}
             {%- if isCurrent %} text-red-500{% endif %}" {%- if isCurrent %} aria-current="page" {% endif %}>
-                {{ item.label }}
-            </a>
-        </li>
-        {%- endfor %}
-    </ul>
+                    {{ item.label }}
+                </a>
+            </li>
+            {%- endfor %}
+        </ul>
+    </div>
 </nav>
