@@ -5,10 +5,6 @@ backend:
   base_url: https://marcos-property-rentals.pages.dev
   auth_endpoint: auth
 
-# Lets the CMS run against the local filesystem for testing before OAuth is wired up.
-# Run `npx decap-server` alongside `npm start`, then visit /admin/ locally.
-local_backend: true
-
 media_folder: src/assets/images
 public_folder: /assets/images
 
