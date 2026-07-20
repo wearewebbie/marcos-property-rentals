@@ -1,0 +1,100 @@
+---
+layout: base/base.njk
+title: "Hello World"
+description: "Hello"
+---
+
+{% include "header/header.njk" %}
+
+<!-- Landing Section -->
+<section class="py-[100px] min-h-screen bg-gray-200">
+    <div class=" container">
+        <div class="flex flex-col lg:flex-row gap-[40px] items-center">
+            <div class="flex flex-col gap-[40px] flex-1">
+                <div class="flex flex-col gap-[20px]">
+                    <h1 class="heading-1-bold">Professional Tenant Sourcing & Referencing</h1>
+                    <h2 class="heading-2">We help landlords find the right tenants and ensure a smooth rental process.
+                    </h2>
+                </div>
+                <a href="#contact" class="button-primary">Enquire Now</a>
+            </div>
+            <div class="flex-1 justify-center items-center flex">
+                {% image "src/assets/images/webbie-logo.png", "Description of image", "your-image-classes-here" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- F&Q Section -->
+<section class="py-[100px]">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">Frequently Asked Questions</h2>
+            <div class="flex flex-col">
+                <details class="group py-[20px] border-b border-black">
+                    <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
+                        <span class="heading-6-bold">How do I apply for a rental property?</span>
+                        <span class="group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="pt-[10px]">You can apply directly through the listing page, or get in touch with us
+                        using the contact form below and we'll guide you through the process.</p>
+                </details>
+                <details class="group py-[20px] border-b border-black">
+                    <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
+                        <span class="heading-6-bold">What documents do I need to rent a property?</span>
+                        <span class="group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="pt-[10px]">You'll typically need proof of identity, proof of income, and references
+                        from a previous landlord or employer.</p>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-[100px] bg-gray-200" id="contact">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">Get in Touch</h2>
+            <div class="flex flex-col lg:flex-row gap-[100px]">
+                <div class="flex flex-col gap-[40px] flex-1">
+                    <form action="#" class="flex flex-col gap-[20px]">
+                        <div class="flex flex-col gap-[5px]">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="flex flex-col gap-[5px]">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="flex flex-col gap-[5px]">
+                            <label for="who" class="form-label">Who are you?</label>
+                            <select id="who" name="who" class="form-input" required>
+                                <option value="">Select an option</option>
+                                <option value="tenant">Tenant</option>
+                                <option value="landlord">Landlord</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-[5px]">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="button-primary self-end">Submit</button>
+                    </form>
+                </div>
+                <div class="flex flex-col gap-[20px] flex-1">
+                    <div class="flex flex-row gap-[5px]">
+                        <img src="/assets/svgs/icon.svg" alt="" class="w-[24px] h-[24px]">
+                        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                    </div>
+                    <div class="flex flex-row gap-[5px]">
+                        <img src="/assets/svgs/icon.svg" alt="" class="w-[24px] h-[24px]">
+                        <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

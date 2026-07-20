@@ -6,7 +6,7 @@ export default function (eleventyConfig) {
 
     const isProd = process.env.CF_PAGES_BRANCH === 'main';
     const baseUrl = isProd
-        ? 'https://clientdomain.com'
+        ? 'https://marcospropertyrentals.com'
         : process.env.CF_PAGES_URL || 'http://localhost:8080';
 
     const outputDir = "dist";
@@ -56,6 +56,8 @@ export default function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.ignores.add("src/admin/index.html");
+    eleventyConfig.addPassthroughCopy("src/admin");
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/assets/svgs");

@@ -3,7 +3,7 @@ export default {
   description: "Website Description",
   schemaType: "LocalBusiness",
   url: process.env.CF_PAGES_BRANCH === 'main'
-    ? "https://PROD URL"
+    ? "https://marcospropertyrentals.com"
     : process.env.CF_PAGES_URL || "http://localhost:8080",
   logo: "",
   image: "SEO Preview Image Card (1200 x 675 pixels)",

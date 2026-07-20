@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: wearewebbie/marcos-property-rentals
+  branch: main
+  base_url: https://marcos-property-rentals.pages.dev
+  auth_endpoint: auth
+
+# Lets the CMS run against the local filesystem for testing before OAuth is wired up.
+# Run `npx decap-server` alongside `npm start`, then visit /admin/ locally.
+local_backend: true
+
+media_folder: src/assets/images
+public_folder: /assets/images
+
+collections:
+  - name: listings
+    label: Listings
+    folder: src/listings
+    create: true
+    delete: true
+    slug: "{{fields.address.street}}"
+    summary: "{{fields.address.street}}, {{fields.address.city}}"
+    fields:
+      - { label: Status, name: status, widget: select, options: [available, under_offer, let] }
+      - { label: Property Type, name: propertyType, widget: select, options: [apartment, house, bungalow, studio, other] }
+      - { label: Price (per month), name: price, widget: number, value_type: int }
+      - label: Address
+        name: address
+        widget: object
+        fields:
+          - { label: Street, name: street, widget: string }
+          - { label: City, name: city, widget: string }
+          - { label: County, name: county, widget: string }
+          - { label: Postcode, name: postcode, widget: string }
+      - { label: Bedrooms, name: bedrooms, widget: number, value_type: int }
+      - { label: Bathrooms, name: bathrooms, widget: number, value_type: int }
+      - { label: Receptions, name: receptions, widget: number, value_type: int }
+      - { label: Description, name: description, widget: text }
+      - label: Images
+        name: images
+        widget: list
+        fields:
+          - label: Image
+            name: url
+            widget: image
+            media_folder: "/src/assets/images/listings/{{slug}}"
+            public_folder: "/assets/images/listings/{{slug}}"
+          - { label: Alt Text, name: alt, widget: string }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Available From, name: availableFrom, widget: datetime, time_format: false }
