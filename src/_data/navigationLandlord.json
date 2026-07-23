@@ -1,11 +1,7 @@
 [
     {
-        "label": "Listings",
-        "url": "#listings"
-    },
-    {
-        "label": "Services",
-        "url": "#services"
+        "label": "Bundles",
+        "url": "#bundles"
     },
     {
         "label": "How it Works",
@@ -14,6 +10,10 @@
     {
         "label": "Why Choose Us",
         "url": "#why-choose-us"
+    },
+    {
+        "label": "F&AQs",
+        "url": "#faqs"
     },
     {
         "label": "Contact",

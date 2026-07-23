@@ -2,14 +2,15 @@
 layout: base/base.njk
 title: "Hello World"
 description: "Hello"
+permalink: landlord.html
 ---
 
-{% include "header/header.njk" %}
+{% include "header/header-landlord.njk" %}
 
 <!-- Landing Section -->
-<section class="py-[100px] min-h-screen bg-gray-200">
-    <div class=" container">
-        <div class="flex flex-col lg:flex-row gap-[40px] items-center">
+<section class="min-h-screen bg-gray-200 flex items-center">
+    <div class="container">
+        <div class="flex flex-col lg:flex-row gap-[40px] items-center ">
             <div class="flex flex-col gap-[40px] flex-1">
                 <div class="flex flex-col gap-[20px]">
                     <h1 class="heading-1-bold">Professional Tenant Sourcing & Referencing</h1>
@@ -20,6 +21,152 @@ description: "Hello"
             </div>
             <div class="flex-1 justify-center items-center flex">
                 {% image "src/assets/images/webbie-logo.png", "Description of image", "your-image-classes-here" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bundles Section -->
+<section class="py-[100px] bg-gray-200" id="bundles">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <div class="flex flex-col gap-[20px]">
+                <h2 class="heading-2-bold">Our Bundles</h2>
+                <p class="">We provide a wide range of services to meet all your property
+                    needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
+                <div class="flex flex-col gap-[20px] p-[20px] border border-black">
+                    <img src="/assets/svgs/icon.svg" alt="" class="w-[24px] h-[24px]">
+
+                    <h3 class="heading-3-bold">Buono</h3>
+
+                    <h4 class="heading-5-bold">£195</h4>
+
+                    <p class="">Description of Service 1.</p>
+                    <ul class="flex flex-col gap-[30px]">
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Our aim is to rent your property at the
+                                best possible price.</p>
+                            <p class="small-normal">Rental Valuation and Marketing Rent Collection</p>
+                        </li>
+
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Accompanied Viewings Check</p>
+                            <p class="small-normal">We accompany all viewers to the
+                                property on your behalf</p>
+                        </li>
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Tennant Screening</p>
+                            <p class="small-normal">We pride ourselves in sound judgement to match you with the best
+                                possible tenant.</p>
+                        </li>
+                </div>
+                <div class="flex flex-col gap-[20px] p-[20px] border border-black">
+                    <img src="/assets/svgs/icon.svg" alt="" class="w-[24px] h-[24px]">
+
+                    <h3 class="heading-3-bold">Buono</h3>
+
+                    <h4 class="heading-5-bold">£195</h4>
+
+                    <p class="">Description of Service 1.</p>
+                    <ul class="flex flex-col gap-[30px]">
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Our aim is to rent your property at the
+                                best possible price.</p>
+                            <p class="small-normal">Rental Valuation and Marketing Rent Collection</p>
+                        </li>
+
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Accompanied Viewings Check</p>
+                            <p class="small-normal">We accompany all viewers to the
+                                property on your behalf</p>
+                        </li>
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Tennant Screening</p>
+                            <p class="small-normal">We pride ourselves in sound judgement to match you with the best
+                                possible tenant.</p>
+                        </li>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- How it Works Section -->
+<section class="py-[100px]" id="how-it-works">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">How It Works</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-[40px]">
+                <div class="flex flex-col gap-[20px] lg:gap-[40px]">
+                    <p class="w-[40px] h-[40px] border border-black flex items-center justify-center">1
+                    </p>
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-6-bold">Submit Details</h3>
+                        <p class="">Provide property specifications and ideal tenant criteria.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[20px] lg:gap-[40px]">
+                    <p class="w-[40px] h-[40px] border border-black flex items-center justify-center">2
+                    </p>
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-6-bold">Submit Details</h3>
+                        <p class="">Provide property specifications and ideal tenant criteria.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[20px] lg:gap-[40px]">
+                    <p class="w-[40px] h-[40px] border border-black flex items-center justify-center">3
+                    </p>
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-6-bold">Submit Details</h3>
+                        <p class="">Provide property specifications and ideal tenant criteria.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[20px] lg:gap-[40px]">
+                    <p class="w-[40px] h-[40px] border border-black flex items-center justify-center">4
+                    </p>
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-6-bold">Submit Details</h3>
+                        <p class="">Provide property specifications and ideal tenant criteria.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-[100px] bg-gray-200" id="why-choose-us">
+    <div class="container">
+        <div class="flex flex-col lg:flex-row gap-[40px]">
+            <div class="flex flex-col gap-[40px] flex-1 lg:sticky lg:top-[100px] lg:self-start">
+                <h2 class="heading-2-bold">Why Choose Us</h2>
+            </div>
+            <div class="flex flex-col gap-[60px] flex-1">
+                <div class="flex flex-row gap-[20px]">
+                    <img src="/assets/svgs/icon.svg" alt="" class="w-[48px] h-[48px]">
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-3-bold">Local Expertise</h3>
+                        <p class="">Deep understanding of the Northern Ireland rental market dynamics and specific
+                            geographical nuances.</p>
+                    </div>
+                </div>
+                <div class="flex flex-row gap-[20px]">
+                    <img src="/assets/svgs/icon.svg" alt="" class="w-[48px] h-[48px]">
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-3-bold">Compliance First</h3>
+                        <p class="">Strict adherence to current legislative requirements, ensuring landlords remain
+                            fully protected and legally sound.</p>
+                    </div>
+                </div>
+                <div class="flex flex-row gap-[20px]">
+                    <img src="/assets/svgs/icon.svg" alt="" class="w-[48px] h-[48px]">
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-3-bold">Transparent Pricing</h3>
+                        <p class="">Clear, upfront cost structures with no hidden fees, designed for straightforward ROI
+                            calculation.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

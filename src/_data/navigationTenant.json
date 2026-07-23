@@ -1,0 +1,24 @@
+[
+    {
+        "label": "Listings",
+        "url": "#listings"
+    },
+    {
+        "label": "F&AQs",
+        "url": "#faqs"
+    },
+    {
+        "label": "How to apply",
+        "url": "#how-to-apply"
+    },
+    {
+        "label": "Contact",
+        "url": "#contact",
+        "type": "cta"
+    },
+    {
+        "label": "Contact",
+        "url": "#contact",
+        "type": "cta"
+    }
+]

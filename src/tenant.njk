@@ -2,12 +2,13 @@
 layout: base/base.njk
 title: "Hello World"
 description: "Hello"
+permalink: tenant.html
 ---
 
-{% include "header/header.njk" %}
+{% include "header/header-tenant.njk" %}
 
 <!-- Landing Section -->
-<section class="py-[100px] min-h-screen bg-gray-200">
+<section class="py-[100px] min-h-screen bg-gray-200 flex items-center">
     <div class=" container">
         <div class="flex flex-col lg:flex-row gap-[40px] items-center">
             <div class="flex flex-col gap-[40px] flex-1">
@@ -20,6 +21,55 @@ description: "Hello"
             </div>
             <div class="flex-1 justify-center items-center flex">
                 {% image "src/assets/images/webbie-logo.png", "Description of image", "your-image-classes-here" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Listings Section -->
+<section class="py-[100px]" id="listings">
+    <div class="container">
+        {% if collections.listings and collections.listings.length > 0 %}
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">Current Listings</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-[40px]">
+                {% for listing in collections.listings %}
+                <div class="flex flex-col gap-[20px] p-[20px] border border-black">
+                    {% if listing.data.images and listing.data.images.length > 0 %}
+                    {% image listing.data.images[0].url, listing.data.images[0].alt, "your-image-classes-here" %}
+                    {% endif %}
+                    <h3 class="">{{ listing.data.address.street }}, {{ listing.data.address.city }}</h3>
+                    <div class="flex flex-row gap-[10px]">
+                        <div class="flex flex-row gap-[10px]">
+                            <p class="">{{ listing.data.bedrooms }} bed</p>
+                        </div>
+                        <div class="flex flex-row gap-[10px]">
+                            <p class="">{{ listing.data.bathrooms }} bath</p>
+                        </div>
+                        <div class="flex flex-row gap-[10px]">
+                            <p class="">£{{ listing.data.price }}/mo</p>
+                        </div>
+                    </div>
+                    <p class="">{{ listing.data.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="">Current Listings</h2>
+            <p class="">There are currently no listings available. Please check back soon.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- How to Apply Section -->
+<section class="py-[100px]">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">How to Apply</h2>
+            <div class="flex flex-col">
             </div>
         </div>
     </div>
