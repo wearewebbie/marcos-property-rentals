@@ -1,4 +1,4 @@
-# Marco's Property Rental's
+# Marco's Property Rentals
 
 This project uses [Eleventy](https://www.11ty.dev/) as a static site generator, [Tailwind CSS](https://tailwindcss.com/) for styling, and is hosted on [Cloudflare Pages](https://pages.cloudflare.com/) with automatic deployment via GitHub.
 
