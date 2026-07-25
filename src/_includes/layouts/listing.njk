@@ -1,0 +1,173 @@
+---
+layout: base/base.njk
+---
+
+{% include "header/header.njk" %}
+
+<!-- Back -->
+<div class="container pt-[20px]">
+    <a href="/#listings" class="small-bold hover:underline">&larr; Back to listings</a>
+</div>
+
+<!-- Gallery -->
+<section class="pt-[20px]">
+    <div class="container">
+        {% if images and images.length > 1 %}
+        <div class="grid grid-cols-3 grid-rows-2 gap-[10px] h-[300px] lg:h-[500px]">
+            <div class="col-span-2 row-span-2 overflow-hidden border border-black">
+                {% image images[0].url, images[0].alt, "w-full h-full object-cover" %}
+            </div>
+            {% for image in images %}
+            {% if loop.index0 > 0 and loop.index0 < 3 %}
+            <div class="overflow-hidden border border-black">
+                {% image image.url, image.alt, "w-full h-full object-cover" %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% elif images and images.length == 1 %}
+        <div class="h-[300px] lg:h-[500px] overflow-hidden border border-black">
+            {% image images[0].url, images[0].alt, "w-full h-full object-cover" %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Summary -->
+<section class="py-[40px]">
+    <div class="container flex flex-col gap-[20px]">
+        <div class="flex flex-col lg:flex-row justify-between gap-[20px]">
+            <div class="flex flex-col gap-[10px]">
+                <h1 class="heading-2-bold">{{ address.street }}, {{ address.city }}</h1>
+                <p class="body-normal">{{ address.county }}, {{ address.postcode }}</p>
+                <div class="flex flex-row gap-[10px]">
+                    <span class="small-bold border border-black px-[10px] py-[5px]">{{ status | replace("_", " ") | title }}</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-[5px] lg:text-right">
+                <p class="heading-3-bold">£{{ price }}<span class="body-normal">/mo</span></p>
+                {% if availableFrom %}
+                <p class="small-normal">Available from {{ availableFrom | formatDate }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 border-t border-b border-black">
+            <div class="flex flex-col items-center gap-[5px] py-[20px] border-r border-black">
+                <p class="heading-5-bold">{{ bedrooms }}</p>
+                <p class="small-normal">Bedroom{{ "s" if bedrooms != 1 }}</p>
+            </div>
+            <div class="flex flex-col items-center gap-[5px] py-[20px] border-r border-black">
+                <p class="heading-5-bold">{{ bathrooms }}</p>
+                <p class="small-normal">Bathroom{{ "s" if bathrooms != 1 }}</p>
+            </div>
+            <div class="flex flex-col items-center gap-[5px] py-[20px]">
+                <p class="heading-5-bold">{{ receptions }}</p>
+                <p class="small-normal">Reception{{ "s" if receptions != 1 }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Description, Key Information + Enquiry -->
+<section class="pb-[100px]">
+    <div class="container">
+        <div class="flex flex-col lg:flex-row gap-[40px]">
+            <div class="flex flex-col gap-[40px] flex-2">
+                <div class="flex flex-col gap-[20px]">
+                    <h2 class="heading-5-bold">Key Information</h2>
+                    <dl class="flex flex-col border-t border-black">
+                        <div class="flex flex-row justify-between py-[15px] border-b border-black">
+                            <dt class="small-normal">Property Type</dt>
+                            <dd class="body-bold">{{ propertyType | title }}</dd>
+                        </div>
+                        <div class="flex flex-row justify-between py-[15px] border-b border-black">
+                            <dt class="small-normal">Heating</dt>
+                            <dd class="body-bold">{{ heatingType | replace("_", " ") | title }}</dd>
+                        </div>
+                        <div class="flex flex-row justify-between py-[15px] border-b border-black">
+                            <dt class="small-normal">Energy Rating</dt>
+                            <dd class="body-bold">{{ energyRating }}</dd>
+                        </div>
+                        <div class="flex flex-row justify-between py-[15px] border-b border-black">
+                            <dt class="small-normal">Furnishing</dt>
+                            <dd class="body-bold">{{ furnishingType | replace("_", " ") | title }}</dd>
+                        </div>
+                        <div class="flex flex-row justify-between py-[15px] border-b border-black">
+                            <dt class="small-normal">Deposit</dt>
+                            <dd class="body-bold">£{{ deposit }}</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="flex flex-col gap-[20px]">
+                    <h2 class="heading-5-bold">About this property</h2>
+                    <p class="body-normal">{{ description }}</p>
+                </div>
+
+                <div class="flex flex-col gap-[20px]">
+                    <h2 class="heading-5-bold">Location</h2>
+                    <div class="border border-black h-[300px] lg:h-[400px] overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps?q={{ (address.street ~ ', ' ~ address.city ~ ', ' ~ address.county ~ ' ' ~ address.postcode) | urlencode }}&output=embed"
+                            class="w-full h-full border-0"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Map showing the location of {{ address.street }}, {{ address.city }}"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="flex flex-col gap-[20px] flex-1 p-[20px] border border-black lg:sticky lg:top-[20px] lg:self-start">
+                <p class="heading-5-bold">£{{ price }}<span class="body-normal">/mo</span></p>
+                <form action="https://submit-form.com/form_v1_F3nVAPjlnVfmoKBG2cJJkw8k" method="POST" class="flex flex-col gap-[10px]">
+                    <div class="flex flex-col gap-[5px]">
+                        <label for="enquiry-name" class="form-label">Full Name</label>
+                        <input type="text" id="enquiry-name" name="name" class="form-input" required>
+                    </div>
+                    <div class="flex flex-col gap-[5px]">
+                        <label for="enquiry-email" class="form-label">Email</label>
+                        <input type="email" id="enquiry-email" name="email" class="form-input" required>
+                    </div>
+                    <div class="flex flex-col gap-[5px]">
+                        <label for="enquiry-phone" class="form-label">Phone</label>
+                        <input type="tel" id="enquiry-phone" name="phone" class="form-input">
+                    </div>
+                    <div class="flex flex-col gap-[5px]">
+                        <label for="enquiry-message" class="form-label">Message</label>
+                        <textarea id="enquiry-message" name="message" rows="3" class="form-input">I'm interested in {{ address.street }}, {{ address.city }}.</textarea>
+                    </div>
+                    <input type="hidden" name="listing" value="{{ address.street }}, {{ address.city }}">
+                    <input type="hidden" name="_redirect" value="{{ site.url }}/success/">
+                    <button type="submit" class="button-primary border border-black py-[10px]">Request a viewing</button>
+                </form>
+                <a href="tel:{{ site.phone }}" class="button-primary border border-black py-[10px] text-center">Call {{ site.phone }}</a>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- Similar Listings -->
+{% set similarListings = (collections.listings | excludeCurrent(page.url)).slice(0, 3) %}
+{% if similarListings.length > 0 %}
+<section class="pb-[100px]">
+    <div class="container flex flex-col gap-[40px]">
+        <h2 class="heading-2-bold">Similar Properties</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-[40px]">
+            {% for listing in similarListings %}
+            <a href="{{ listing.url }}" class="flex flex-col gap-[20px] p-[20px] border border-black">
+                {% if listing.data.images and listing.data.images.length > 0 %}
+                {% image listing.data.images[0].url, listing.data.images[0].alt, "w-full h-[200px] object-cover" %}
+                {% endif %}
+                <h3 class="heading-6-bold">{{ listing.data.address.street }}, {{ listing.data.address.city }}</h3>
+                <div class="flex flex-row gap-[10px] small-normal">
+                    <p>{{ listing.data.bedrooms }} bed</p>
+                    <p>{{ listing.data.bathrooms }} bath</p>
+                    <p>£{{ listing.data.price }}/mo</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
