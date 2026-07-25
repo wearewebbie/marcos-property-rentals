@@ -19,10 +19,6 @@ collections:
     fields:
       - { label: Status, name: status, widget: select, options: [available, under_offer, let] }
       - { label: Property Type, name: propertyType, widget: select, options: [apartment, house, bungalow, studio, other] }
-      - { label: Heating Type, name: heatingType, widget: select, options: [gas_central, electric, oil, storage, other] }
-      - { label: Energy Rating, name: energyRating, widget: select, options: [A, B, C, D, E, F, G] }
-      - { label: Furnishing Type, name: furnishingType, widget: select, options: [furnished, unfurnished, part_furnished] }
-      - { label: Deposit (£), name: deposit, widget: number, value_type: int }
       - { label: Price (per month), name: price, widget: number, value_type: int }
       - label: Address
         name: address
