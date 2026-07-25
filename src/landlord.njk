@@ -2,24 +2,185 @@
 layout: base/base.njk
 title: "Hello World"
 description: "Hello"
+permalink: landlord.html
 ---
 
-{% include "header/header.njk" %}
+{% include "header/header-landlord.njk" %}
 
 <!-- Landing Section -->
-<section class="py-[100px] min-h-screen bg-gray-200">
-    <div class=" container">
-        <div class="flex flex-col lg:flex-row gap-[40px] items-center">
+<section class="min-h-screen bg-gray-200 flex items-center">
+    <div class="container">
+        <div class="flex flex-col lg:flex-row gap-[40px] items-center ">
             <div class="flex flex-col gap-[40px] flex-1">
                 <div class="flex flex-col gap-[20px]">
                     <h1 class="heading-1-bold">Professional Tenant Sourcing & Referencing</h1>
                     <h2 class="heading-2">We help landlords find the right tenants and ensure a smooth rental process.
                     </h2>
                 </div>
-                <a href="#contact" class="button-primary">Enquire Now</a>
+                <div class="flex flex-row gap-[20px]">
+                    <a href="#packages" class="button-outline">Learn More</a>
+                    <a href="#contact" class="button-primary">Enquire Now</a>
+                </div>
             </div>
             <div class="flex-1 justify-center items-center flex">
                 {% image "src/assets/images/webbie-logo.png", "Description of image", "your-image-classes-here" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Packages Section -->
+<section class="py-[100px] bg-gray-200" id="packages">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <div class="flex flex-col gap-[20px]">
+                <h2 class="heading-2-bold">Our Packages</h2>
+                <p class="bg-yellow-500">We provide a wide range of services to meet all your property
+                    needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
+                <div class="relative flex flex-col gap-[20px] p-[20px] border border-black">
+                    <svg viewBox="0 0 120 120" class="w-[120px] h-[120px] absolute top-[20px] right-[20px] z-10 animate-[spin_10s_linear_infinite]">
+                        <defs>
+                            <path id="introOfferCirclePath" d="M60,60 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0" />
+                        </defs>
+                        <text font-size="13" font-weight="bold" letter-spacing="1" word-spacing="3">
+                            <textPath id="introOfferTextPath" href="#introOfferCirclePath">Introductory Offer • Introductory Offer • </textPath>
+                        </text>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[72px] h-[72px]" fill="#121212"
+                        viewBox="0 0 256 256">
+                        <path d="M216,48V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z"
+                            opacity="0.2"></path>
+                        <path
+                            d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM140,80v96a8,8,0,0,1-16,0V95l-11.56,7.71a8,8,0,1,1-8.88-13.32l24-16A8,8,0,0,1,140,80Z">
+                        </path>
+                    </svg>
+                    <h3 class="heading-3-bold">Package Uno</h3>
+
+                    <h4 class="heading-5-bold">£350</h4>
+
+                    <p class="bg-yellow-500">Description of Service 1.</p>
+                    <ul class="flex flex-col gap-[30px]">
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Our aim is to rent your property at the
+                                best possible price.</p>
+                            <p class="small-normal">Rental Valuation and Marketing Rent Collection</p>
+                        </li>
+
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Accompanied Viewings Check</p>
+                            <p class="small-normal">We accompany all viewers to the
+                                property on your behalf</p>
+                        </li>
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Tennant Screening</p>
+                            <p class="small-normal">We pride ourselves in sound judgement to match you with the best
+                                possible tenant.</p>
+                        </li>
+                </div>
+                <div class="flex flex-col gap-[20px] p-[20px] border border-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[72px] h-[72px]" fill="#121212"
+                        viewBox="0 0 256 256">
+                        <path d="M216,48V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z"
+                            opacity="0.2"></path>
+                        <path
+                            d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-48-32a8,8,0,0,1-8,8H104a8,8,0,0,1-6.4-12.8l43.17-57.56a16,16,0,1,0-27.86-15,8,8,0,0,1-15.09-5.34,32.43,32.43,0,0,1,4.62-8.59,32,32,0,1,1,51.11,38.52L120,168h32A8,8,0,0,1,160,176Z">
+                        </path>
+                    </svg>
+                    <h3 class="heading-3-bold">Package Duo</h3>
+
+                    <h4 class="heading-5-bold">£350 + £50 per month maintenance</h4>
+
+                    <p class="bg-yellow-500">Description of Service 2</p>
+                    <ul class="flex flex-col gap-[30px]">
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Rent Collection</p>
+                            <p class="small-normal">We will process the rental payment from
+                                the tenant and pay it to you on a
+                                date of the month</p>
+                        </li>
+
+
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Property and Landlord Compliance</p>
+                            <p class="small-normal">Strict adherence to local governmental
+                                property on your behalf regulation so that your property is legally sound</p>
+                        </li>
+                        <li class="flex flex-col gap-[10px]">
+                            <p class="body-normal">Emergency call handling dispute management</p>
+                            <p class="small-normal">We pride ourselves in positive
+                                engagement to ensure a successful
+                                tenancy for all parties</p>
+                        </li>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Package Comparison Section -->
+<section class="py-[100px] bg-gray-200" id="why-choose-us">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">Package Comparison HERE</h2>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-[100px] bg-gray-200" id="why-choose-us">
+    <div class="container">
+        <div class="flex flex-col lg:flex-row gap-[40px]">
+            <div class="flex flex-col gap-[40px] flex-1 lg:sticky lg:top-[100px] lg:self-start">
+                <h2 class="heading-2-bold">Why Choose Us</h2>
+            </div>
+            <div class="flex flex-col gap-[60px] flex-1">
+                <div class="flex flex-col lg:flex-row gap-[10px] lg:gap-[40px] lg:items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[50px] h-[50px] lg:w-[100px] lg:h-[100px]"
+                        fill="#121212" viewBox="0 0 256 256">
+                        <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path>
+                        <path
+                            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm104,0a8,8,0,0,1-8,8H152a8,8,0,0,1,0-16h24A8,8,0,0,1,184,108Zm-9.08,48c-10.29,17.79-27.39,28-46.92,28s-36.63-10.2-46.92-28a8,8,0,1,1,13.84-8c7.47,12.91,19.21,20,33.08,20s25.61-7.1,33.08-20a8,8,0,1,1,13.84,8Z">
+                        </path>
+                    </svg>
+                    <div class="flex flex-col gap-[10px]">
+                        <h3 class="heading-3-bold">Local Legend</h3>
+                        <p class="">Our local knowledge, approachable nature, and commitment to exceptional service have
+                            earned me the trust of landlords and tenants alike. </p>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-[10px] lg:gap-[40px] lg:items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[50px] h-[50px] lg:w-[100px] lg:h-[100px]"
+                        fill="#121212" viewBox="0 0 256 256">
+                        <path d="M216,116.69V216H152V152H104v64H40V116.69l82.34-82.35a8,8,0,0,1,11.32,0Z" opacity="0.2">
+                        </path>
+                        <path
+                            d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z">
+                        </path>
+                    </svg>
+                    <div class="flex flex-col gap-[10px]">
+                        <h3 class="heading-3-bold">Passion for Property</h3>
+                        <p class="">Whether helping tenants find the right home or assisting landlords with their
+                            property goals, we take pride in delivering excellent service and creating lasting
+                            relationships. </p>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-[10px] lg:gap-[40px] lg:items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[50px] h-[50px] lg:w-[100px] lg:h-[100px]"
+                        fill="#121212" viewBox="0 0 256 256">
+                        <path
+                            d="M149.66,45.66l-64,64a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,0-11.32l64-64a8,8,0,0,1,11.32,0l16,16A8,8,0,0,1,149.66,45.66Zm88,76.68-16-16a8,8,0,0,0-11.32,0l-64,64a8,8,0,0,0,0,11.32l16,16a8,8,0,0,0,11.32,0l64-64A8,8,0,0,0,237.66,122.34Z"
+                            opacity="0.2"></path>
+                        <path
+                            d="M243.32,116.69l-16-16a16,16,0,0,0-20.84-1.53L156.84,49.52a16,16,0,0,0-1.52-20.84l-16-16a16,16,0,0,0-22.63,0l-64,64a16,16,0,0,0,0,22.63l16,16a16,16,0,0,0,20.83,1.52L96.69,124,31.31,189.38A25,25,0,0,0,66.63,224.7L132,159.32l7.17,7.16a16,16,0,0,0,1.52,20.84l16,16a16,16,0,0,0,22.63,0l64-64A16,16,0,0,0,243.32,116.69ZM80,104,64,88l64-64,16,16ZM55.32,213.38a9,9,0,0,1-12.69,0,9,9,0,0,1,0-12.68L108,135.32,120.69,148ZM101,105.66,145.66,61,195,110.34,150.35,155ZM168,192l-16-16,4-4h0l56-56h0l4-4,16,16Z">
+                        </path>
+                    </svg>
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="heading-3-bold bg-yellow-500">Doing the Right Thing</h3>
+                        <p class="">By staying up to date with legislation, following best practices, and maintaining
+                            the highest professional standards, we help to ensure a successful tenancy. </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -33,19 +194,37 @@ description: "Hello"
             <div class="flex flex-col">
                 <details class="group py-[20px] border-b border-black">
                     <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
-                        <span class="heading-6-bold">How do I apply for a rental property?</span>
+                        <span class="heading-6-bold">How long will it take to rent my property?</span>
                         <span class="group-open:rotate-45">+</span>
                     </summary>
-                    <p class="pt-[10px]">You can apply directly through the listing page, or get in touch with us
-                        using the contact form below and we'll guide you through the process.</p>
+                    <p class="pt-[10px]">This will vary from property to property although we will aim to establish
+                        a tenancy within 2 to 6 weeks.</p>
                 </details>
                 <details class="group py-[20px] border-b border-black">
                     <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
-                        <span class="heading-6-bold">What documents do I need to rent a property?</span>
+                        <span class="heading-6-bold">How much rent can I receive for my property?</span>
                         <span class="group-open:rotate-45">+</span>
                     </summary>
-                    <p class="pt-[10px]">You'll typically need proof of identity, proof of income, and references
-                        from a previous landlord or employer.</p>
+                    <p class="pt-[10px]">This is dependent on the property type and location. We will aim is to rent
+                        your property at the best possible price, comparable to other properties in the local area.
+                    </p>
+                </details>
+                <details class="group py-[20px] border-b border-black">
+                    <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
+                        <span class="heading-6-bold">How much deposit can I charge?</span>
+                        <span class="group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="pt-[10px]">We typically ask the tenant to pay a deposit equal to the monthly rental
+                        price. All deposits are protected using the Tenancy Deposit Scheme Northern Ireland.</p>
+                </details>
+                <details class="group py-[20px] border-b border-black">
+                    <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
+                        <span class="heading-6-bold bg-yellow-500">Who is responsible for repairs?</span>
+                        <span class="group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="pt-[10px]">Landlords are generally responsible for structural issues such as heating,
+                        plumbing and electrical systems. Tenants are responsible for everyday upkeep and damage they
+                        cause.</p>
                 </details>
             </div>
         </div>
@@ -85,12 +264,26 @@ description: "Hello"
                     </form>
                 </div>
                 <div class="flex flex-col gap-[20px] flex-1">
-                    <div class="flex flex-row gap-[5px]">
-                        <img src="/assets/svgs/icon.svg" alt="" class="w-[24px] h-[24px]">
+                    <div class="flex flex-row gap-[20px] items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[32px] h-[32px]" fill="#121212"
+                            viewBox="0 0 256 256">
+                            <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path>
+                            <path
+                                d="M128,24a104,104,0,0,0,0,208c21.51,0,44.1-6.48,60.43-17.33a8,8,0,0,0-8.86-13.33C166,210.38,146.21,216,128,216a88,88,0,1,1,88-88c0,26.45-10.88,32-20,32s-20-5.55-20-32V88a8,8,0,0,0-16,0v4.26a48,48,0,1,0,5.93,65.1c6,12,16.35,18.64,30.07,18.64,22.54,0,36-17.94,36-48A104.11,104.11,0,0,0,128,24Zm0,136a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z">
+                            </path>
+                        </svg>
                         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
                     </div>
-                    <div class="flex flex-row gap-[5px]">
-                        <img src="/assets/svgs/icon.svg" alt="" class="w-[24px] h-[24px]">
+                    <div class="flex flex-row gap-[20px] items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[32px] h-[32px]" fill="#121212"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M215.94,182.08A48.33,48.33,0,0,1,168,224,136,136,0,0,1,32,88,48.33,48.33,0,0,1,73.92,40.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L81.32,125a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59l25-21.3a8,8,0,0,1,7.59-.69l47.16,21.13A8,8,0,0,1,215.94,182.08Z"
+                                opacity="0.2"></path>
+                            <path
+                                d="M144.27,45.93a8,8,0,0,1,9.8-5.66,86.22,86.22,0,0,1,61.66,61.66,8,8,0,0,1-5.66,9.8A8.23,8.23,0,0,1,208,112a8,8,0,0,1-7.73-5.94,70.35,70.35,0,0,0-50.33-50.33A8,8,0,0,1,144.27,45.93Zm-2.33,41.8c13.79,3.68,22.65,12.54,26.33,26.33A8,8,0,0,0,176,120a8.23,8.23,0,0,0,2.07-.27,8,8,0,0,0,5.66-9.8c-5.12-19.16-18.5-32.54-37.66-37.66a8,8,0,1,0-4.13,15.46Zm81.94,95.35A56.26,56.26,0,0,1,168,232C88.6,232,24,167.4,24,88A56.26,56.26,0,0,1,72.92,32.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,109.39,104c-.18.27-.37.52-.57.77L88,129.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,223.88,183.08Zm-15.88-2s-.07,0-.11,0h0l-47-21.05-24.35,20.71a8.44,8.44,0,0,1-.74.56,16,16,0,0,1-15.75,1.14c-18.73-9.05-37.4-27.58-46.46-46.11a16,16,0,0,1,1-15.7,6.13,6.13,0,0,1,.57-.77L96,95.15l-21-47a.61.61,0,0,1,0-.12A40.2,40.2,0,0,0,40,88,128.14,128.14,0,0,0,168,216,40.21,40.21,0,0,0,208,181.07Z">
+                            </path>
+                        </svg>
                         <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
                     </div>
                 </div>

@@ -2,12 +2,13 @@
 layout: base/base.njk
 title: "Hello World"
 description: "Hello"
+permalink: tenant.html
 ---
 
-{% include "header/header.njk" %}
+{% include "header/header-tenant.njk" %}
 
 <!-- Landing Section -->
-<section class="py-[100px] min-h-screen bg-gray-200">
+<section class="py-[100px] min-h-screen bg-gray-200 flex items-center">
     <div class=" container">
         <div class="flex flex-col lg:flex-row gap-[40px] items-center">
             <div class="flex flex-col gap-[40px] flex-1">
@@ -25,6 +26,61 @@ description: "Hello"
     </div>
 </section>
 
+<!-- Listings Section -->
+<section class="py-[100px]" id="listings">
+    <div class="container">
+        {% if collections.listings and collections.listings.length > 0 %}
+        <div class="flex flex-col gap-[40px]">
+            <div class="flex flex-col gap-[10px]">
+                <h2 class="heading-2-bold">Available Properties</h2>
+                <p class="body-normal">Browse our current listings and find your next home.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-[40px]">
+                {% for listing in collections.listings %}
+                <div class="flex flex-col border border-black group">
+                    <div class="relative overflow-hidden h-[240px] border-b border-black">
+                        {% if listing.data.images and listing.data.images.length > 0 %}
+                        {% image listing.data.images[0].url, listing.data.images[0].alt, "w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" %}
+                        {% endif %}
+                        <span class="absolute top-[10px] left-[10px] small-bold bg-white border border-black px-[10px] py-[5px]">{{ listing.data.status | replace("_", " ") | title }}</span>
+                    </div>
+                    <div class="flex flex-col gap-[15px] p-[20px] flex-1">
+                        <div class="flex flex-col gap-[5px]">
+                            <h3 class="heading-6-bold">{{ listing.data.address.street }}, {{ listing.data.address.city }}</h3>
+                            <p class="small-normal">{{ listing.data.address.county }}</p>
+                        </div>
+                        <div class="flex flex-row gap-[15px] small-normal border-t border-b border-black py-[10px]">
+                            <p>{{ listing.data.bedrooms }} bed</p>
+                            <p>{{ listing.data.bathrooms }} bath</p>
+                            <p>{{ listing.data.receptions }} reception</p>
+                        </div>
+                        <p class="heading-6-bold">£{{ listing.data.price }}<span class="small-normal">/mo</span></p>
+                        <a href="{{ listing.url }}" class="button-primary border border-black py-[10px] text-center mt-auto">View Property</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">Available Properties</h2>
+            <p class="">There are currently no listings available. Please check back soon.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- How to Apply Section -->
+<section class="py-[100px]">
+    <div class="container">
+        <div class="flex flex-col gap-[40px]">
+            <h2 class="heading-2-bold">How to Apply</h2>
+            <div class="flex flex-col">
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- F&Q Section -->
 <section class="py-[100px]">
     <div class="container">
@@ -33,19 +89,43 @@ description: "Hello"
             <div class="flex flex-col">
                 <details class="group py-[20px] border-b border-black">
                     <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
-                        <span class="heading-6-bold">How do I apply for a rental property?</span>
+                        <span class="heading-6-bold">How much deposit will I pay?</span>
                         <span class="group-open:rotate-45">+</span>
                     </summary>
-                    <p class="pt-[10px]">You can apply directly through the listing page, or get in touch with us
-                        using the contact form below and we'll guide you through the process.</p>
+                    <p class="pt-[10px]">We typically ask the tenant to pay a deposit equal to the monthly rental
+                        price. All deposits are protected using the Tenancy Deposit Scheme Northern Ireland.</p>
                 </details>
                 <details class="group py-[20px] border-b border-black">
                     <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
-                        <span class="heading-6-bold">What documents do I need to rent a property?</span>
+                        <span class="heading-6-bold bg-yellow-500">What documents do I need to provide to rent a
+                            property?</span>
                         <span class="group-open:rotate-45">+</span>
                     </summary>
-                    <p class="pt-[10px]">You'll typically need proof of identity, proof of income, and references
-                        from a previous landlord or employer.</p>
+                    <p class="pt-[10px]">Requirements include a valid proof of identity and payslips dated for
+                        previous 3 months of employment.</p>
+                </details>
+                <details class="group py-[20px] border-b border-black">
+                    <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
+                        <span class="heading-6-bold">I have a dispute. Who do I contact?</span>
+                        <span class="group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="pt-[10px]">This will be detailed in your tenancy agreement in section 1:8.</p>
+                </details>
+                <details class="group py-[20px] border-b border-black">
+                    <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
+                        <span class="heading-6-bold">Is smoking allowed inside a property?</span>
+                        <span class="group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="pt-[10px]">This is dependent on the property type and landlord. Contact us for further
+                        information.</p>
+                </details>
+                <details class="group py-[20px] border-b border-black">
+                    <summary class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]">
+                        <span class="heading-6-bold">Are pets allowed inside a property?</span>
+                        <span class="group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="pt-[10px]">This is dependent on the property type and landlord. Contact us for further
+                        information. </p>
                 </details>
             </div>
         </div>
