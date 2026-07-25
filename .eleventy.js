@@ -50,18 +50,6 @@ export default function (eleventyConfig) {
         return new Date(date).toISOString().split("T")[0];
     });
 
-    eleventyConfig.addFilter("formatDate", function (date) {
-        return new Date(date).toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-        });
-    });
-
-    eleventyConfig.addFilter("excludeCurrent", function (items, url) {
-        return (items || []).filter((item) => item.url !== url);
-    });
-
     eleventyConfig.addCollection("debugUrls", function (collectionApi) {
         return collectionApi.getAll().map(item => {
             return item;

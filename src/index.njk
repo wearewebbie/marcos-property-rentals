@@ -32,7 +32,7 @@ permalink: index.html
             <h2 class="heading-2-bold">Current Listings</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-[40px]">
                 {% for listing in collections.listings %}
-                <a href="{{ listing.url }}" class="flex flex-col gap-[20px] p-[20px] border border-black">
+                <div class="flex flex-col gap-[20px] p-[20px] border border-black">
                     {% if listing.data.images and listing.data.images.length > 0 %}
                     {% image listing.data.images[0].url, listing.data.images[0].alt, "your-image-classes-here" %}
                     {% endif %}
@@ -49,7 +49,7 @@ permalink: index.html
                         </div>
                     </div>
                     <p class="">{{ listing.data.description }}</p>
-                </a>
+                </div>
                 {% endfor %}
             </div>
         </div>
