@@ -1,6 +1,10 @@
 ---
 status: available
 propertyType: apartment
+heatingType: gas_central
+energyRating: C
+furnishingType: unfurnished
+deposit: 1200
 price: 1200
 address:
   street: 46 Meeting St
