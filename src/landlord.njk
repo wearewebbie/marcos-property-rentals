@@ -39,7 +39,15 @@ permalink: landlord.html
                     needs.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
-                <div class="flex flex-col gap-[20px] p-[20px] border border-black">
+                <div class="relative flex flex-col gap-[20px] p-[20px] border border-black">
+                    <svg viewBox="0 0 120 120" class="w-[120px] h-[120px] absolute top-[20px] right-[20px] z-10 animate-[spin_10s_linear_infinite]">
+                        <defs>
+                            <path id="introOfferCirclePath" d="M60,60 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0" />
+                        </defs>
+                        <text font-size="13" font-weight="bold" letter-spacing="1" word-spacing="3">
+                            <textPath id="introOfferTextPath" href="#introOfferCirclePath">Introductory Offer • Introductory Offer • </textPath>
+                        </text>
+                    </svg>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-[72px] h-[72px]" fill="#121212"
                         viewBox="0 0 256 256">
                         <path d="M216,48V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z"
