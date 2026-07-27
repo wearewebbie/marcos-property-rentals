@@ -1,11 +1,17 @@
 @layer utilities {
-    .form-label {
-        @apply small-normal;
-    }
+  .form-label {
+    @apply small-normal;
+  }
 
-    .form-input {
-        @apply p-[10px] border border-black;
-    }
+  .form-input {
+    @apply p-[10px] border border-black;
+  }
 
-    .button-primary {}
+  .button-primary-peach {
+    @apply bg-peach text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-peach border border-peach border-[3px];
+  }
+
+  .button-primary-navy {
+    @apply bg-navy text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-navy border border-navy border-[3px];
+  }
 }

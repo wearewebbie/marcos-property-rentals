@@ -10,7 +10,7 @@
        h4,
        h5,
        h6 {
-           font-family: "FONT", sans-serif !important;
+           font-family: "Neue Haas Display", sans-serif !important;
        }
 
        .markdown-isolated {
@@ -33,70 +33,153 @@
        }
 
        body {
-           font-family: "FONT", sans-serif;
+           font-family: "Neue Haas Display", sans-serif;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-Thin.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayThin.woff2') format('woff2');
            font-weight: 100;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-ExtraLight.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayThinItalic.woff2') format('woff2');
+           font-weight: 100;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayXThin.woff2') format('woff2');
            font-weight: 200;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-Light.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayXThinItalic.woff2') format('woff2');
+           font-weight: 200;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayLight.woff2') format('woff2');
            font-weight: 300;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-Regular.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayLightItalic.woff2') format('woff2');
+           font-weight: 300;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayRoman.woff2') format('woff2');
            font-weight: 400;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-Medium.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayRomanItalic.woff2') format('woff2');
+           font-weight: 400;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayMedium.woff2') format('woff2');
            font-weight: 500;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-SemiBold.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayMediumItalic.woff2') format('woff2');
+           font-weight: 500;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       /* No SemiBold in this family; Bold is the closest available weight. */
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBold.woff2') format('woff2');
            font-weight: 600;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-Bold.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBoldItalic.woff2') format('woff2');
+           font-weight: 600;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBold.woff2') format('woff2');
            font-weight: 700;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-ExtraBold.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBoldItalic.woff2') format('woff2');
+           font-weight: 700;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       /* No ExtraBold in this family; Black is the closest available weight. */
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBlack.woff2') format('woff2');
            font-weight: 800;
            font-style: normal;
+           font-display: swap;
        }
 
        @font-face {
-           font-family: 'FONT';
-           src: url('/assets/fonts/FONT-Black.ttf') format('truetype');
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBlackItalic.woff2') format('woff2');
+           font-weight: 800;
+           font-style: italic;
+           font-display: swap;
+       }
+
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBlack.woff2') format('woff2');
            font-weight: 900;
            font-style: normal;
+           font-display: swap;
+       }
+
+       @font-face {
+           font-family: 'Neue Haas Display';
+           src: url('/assets/fonts/NeueHaasDisplayBlackItalic.woff2') format('woff2');
+           font-weight: 900;
+           font-style: italic;
+           font-display: swap;
        }
    }
 
