@@ -4,14 +4,40 @@
   }
 
   .form-input {
-    @apply p-[10px] border border-black;
+    @apply p-[10px] border-[3px];
   }
 
   .button-primary-peach {
-    @apply bg-peach text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-peach border border-peach border-[3px];
+    @apply bg-peach text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-peach border border-peach border-[3px] cursor-pointer;
   }
 
   .button-primary-navy {
-    @apply bg-navy text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-navy border border-navy border-[3px];
+    @apply bg-navy text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-navy border border-navy border-[3px] cursor-pointer;
   }
+
+    .button-outline-peach {
+    @apply bg-transparent text-peach px-[20px] py-[10px] hover:bg-peach hover:text-eggshell border border-peach border-[3px] cursor-pointer;
+  }
+
+      .button-outline-navy {
+    @apply bg-transparent text-navy px-[20px] py-[10px] hover:bg-navy hover:text-eggshell border border-navy border-[3px] cursor-pointer;
+  }
+
+      .button-outline-eggshell {
+    @apply bg-transparent text-eggshell px-[20px] py-[10px] hover:bg-eggshell hover:text-navy border border-eggshell border-[3px] cursor-pointer;
+  }
+}
+
+#faqs details {
+  interpolate-size: allow-keywords;
+}
+
+#faqs details::details-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease, content-visibility 0.3s ease allow-discrete;
+}
+
+#faqs details[open]::details-content {
+  height: auto;
 }

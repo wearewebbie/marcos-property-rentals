@@ -13,12 +13,6 @@
     },
     {
         "label": "Contact",
-        "url": "#contact",
-        "type": "cta"
-    },
-    {
-        "label": "Contact",
-        "url": "#contact",
-        "type": "cta"
+        "url": "#contact"
     }
 ]

@@ -4,10 +4,6 @@
         "url": "#packages"
     },
     {
-        "label": "How it Works",
-        "url": "#how-it-works"
-    },
-    {
         "label": "Why Choose Us",
         "url": "#why-choose-us"
     },
@@ -17,7 +13,6 @@
     },
     {
         "label": "Contact",
-        "url": "#contact",
-        "type": "cta"
+        "url": "#contact"
     }
 ]
