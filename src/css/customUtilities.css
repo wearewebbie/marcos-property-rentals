@@ -41,3 +41,21 @@
 #faqs details[open]::details-content {
   height: auto;
 }
+
+/* WhatsApp Pulse Ring Animation */
+
+@keyframes pulse_ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.whatsapp-pulse {
+    animation: pulse_ring 1.5s ease-out 3;
+}

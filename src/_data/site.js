@@ -8,6 +8,7 @@ export default {
   logo: "",
   image: "SEO Preview Image Card (1200 x 675 pixels)",
   phone: "+44 000 000 000",
+  whatsapp: "44000000000",
   email: "info@marcospropertyrentals.com",
   social: {
     instagram: "https://instagram.com/example",
