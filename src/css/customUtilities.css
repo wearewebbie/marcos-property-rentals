@@ -8,23 +8,23 @@
   }
 
   .button-primary-peach {
-    @apply bg-peach text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-peach border border-peach border-[3px] cursor-pointer;
+    @apply bg-peach text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-peach border border-peach border-[3px] cursor-pointer capitalize;
   }
 
   .button-primary-navy {
-    @apply bg-navy text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-navy border border-navy border-[3px] cursor-pointer;
+    @apply bg-navy text-eggshell px-[20px] py-[10px] hover:bg-transparent hover:text-navy border border-navy border-[3px] cursor-pointer capitalize;
   }
 
   .button-outline-peach {
-    @apply bg-transparent text-peach px-[20px] py-[10px] hover:bg-peach hover:text-eggshell border border-peach border-[3px] cursor-pointer;
+    @apply bg-transparent text-peach px-[20px] py-[10px] hover:bg-peach hover:text-eggshell border border-peach border-[3px] cursor-pointer capitalize;
   }
 
   .button-outline-navy {
-    @apply bg-transparent text-navy px-[20px] py-[10px] hover:bg-navy hover:text-eggshell border border-navy border-[3px] cursor-pointer;
+    @apply bg-transparent text-navy px-[20px] py-[10px] hover:bg-navy hover:text-eggshell border border-navy border-[3px] cursor-pointer capitalize;
   }
 
   .button-outline-eggshell {
-    @apply bg-transparent text-eggshell px-[20px] py-[10px] hover:bg-eggshell hover:text-navy border border-eggshell border-[3px] cursor-pointer;
+    @apply bg-transparent text-eggshell px-[20px] py-[10px] hover:bg-eggshell hover:text-navy border border-eggshell border-[3px] cursor-pointer capitalize;
   }
 }
 
@@ -73,7 +73,7 @@
   }
 }
 
-/* WhatsApp Pulse Ring Animation */
+/* Pulse Ring Animation */
 
 @keyframes pulse_ring {
   0% {
@@ -88,5 +88,9 @@
 }
 
 .whatsapp-pulse {
+  animation: pulse_ring 1.5s ease-out 3;
+}
+
+.messenger-pulse {
   animation: pulse_ring 1.5s ease-out 3;
 }

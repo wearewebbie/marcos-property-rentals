@@ -1,19 +1,19 @@
 [
-    {
-        "label": "Listings",
-        "url": "#listings"
-    },
-    {
-        "label": "F&Qs",
-        "url": "#faqs"
-    },
-    {
-        "label": "How to apply",
-        "url": "#how-to-apply"
-    },
-    {
-        "label": "Contact",
-        "url": "#contact",
-        "cta": true
-    }
+  {
+    "label": "Listings",
+    "url": "/tenant/#listings"
+  },
+  {
+    "label": "How to apply",
+    "url": "/tenant/#how-to-apply"
+  },
+  {
+    "label": "F&Qs",
+    "url": "/tenant/#faqs"
+  },
+  {
+    "label": "Contact",
+    "url": "/tenant/#contact",
+    "cta": true
+  }
 ]

@@ -33,7 +33,9 @@ themeColor: "#072A54"
           data-reveal
           data-reveal-delay="200"
         >
-          <a href="#packages" class="button-outline-navy">Learn More</a>
+          <a href="#packages" class="button-outline-navy"
+            >Available properties</a
+          >
           <a href="#contact" class="button-primary-peach">Enquire Now</a>
         </div>
       </div>
@@ -251,7 +253,9 @@ themeColor: "#072A54"
     {% if collections.listings and collections.listings.length > 0 %}
     <div class="flex flex-col gap-[40px]">
       <div class="flex flex-col gap-[10px]" data-reveal>
-        <h2 class="heading-2-bold text-eggshell">Available Properties</h2>
+        <h2 class="heading-2-bold text-eggshell capitalize">
+          browse and find your next home
+        </h2>
         <p class="body-normal text-eggshell">
           Browse our current listings and find your next home.
         </p>
@@ -295,7 +299,7 @@ themeColor: "#072A54"
               £{{ listing.data.price }}<span class="small-normal">/mo</span>
             </p>
             <span
-              class="button-outline-peach text-center transition-colors duration-300 group-hover:bg-peach group-hover:text-eggshell"
+              class="button-primary-peach text-center transition-colors duration-300 group-hover:bg-peach group-hover:text-eggshell"
               >View Property</span
             >
           </div>
@@ -315,17 +319,17 @@ themeColor: "#072A54"
 </section>
 
 <!-- How to Apply Section -->
-<section class="pt-[100px] bg-eggshell">
+<section class="pt-[100px] bg-eggshell" id="how-to-apply">
   <div class="container">
     <div class="flex flex-col gap-[40px]">
       <h2 class="heading-2-bold text-navy" data-reveal>How to Apply</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[40px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-[40px]">
         <div class="flex flex-col gap-[10px]" data-reveal>
           <p class="heading-3-bold text-peach">1</p>
-          <h3 class="heading-6-bold text-navy">Browse & Enquire</h3>
+          <h3 class="heading-6-bold text-navy">Book a Viewing</h3>
           <p class="body-normal text-navy">
-            Explore our available properties and get in touch to arrange a
-            viewing that suits your schedule.
+            Viewing the property gives you the chance to explore the property,
+            ask questions, and make sure it meets your needs before applying.
           </p>
         </div>
         <div
@@ -334,10 +338,10 @@ themeColor: "#072A54"
           data-reveal-delay="100"
         >
           <p class="heading-3-bold text-peach">2</p>
-          <h3 class="heading-6-bold text-navy">View the Property</h3>
+          <h3 class="heading-6-bold text-navy">Apply</h3>
           <p class="body-normal text-navy">
-            View the property in person and let our team answer any questions
-            about the tenancy terms.
+            Send us your application and we'll take care of the identity,
+            income, and reference verification process.
           </p>
         </div>
         <div
@@ -346,22 +350,10 @@ themeColor: "#072A54"
           data-reveal-delay="200"
         >
           <p class="heading-3-bold text-peach">3</p>
-          <h3 class="heading-6-bold text-navy">Apply & Reference</h3>
+          <h3 class="heading-6-bold text-navy">Move in</h3>
           <p class="body-normal text-navy">
-            Submit your application so our team can carry out identity, income
-            and reference checks fast.
-          </p>
-        </div>
-        <div
-          class="flex flex-col gap-[10px]"
-          data-reveal
-          data-reveal-delay="300"
-        >
-          <p class="heading-3-bold text-peach">4</p>
-          <h3 class="heading-6-bold text-navy">Sign & Move In</h3>
-          <p class="body-normal text-navy">
-            Once approved, we'll prepare your agreement, protect your deposit,
-            and arrange your move in date.
+            Once approved, we'll get your tenancy agreement ready and set a date
+            for you to collect the keys and move in.
           </p>
         </div>
       </div>
@@ -382,7 +374,7 @@ themeColor: "#072A54"
             class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
           >
             <span class="heading-6-bold text-navy"
-              >How much deposit will I pay?</span
+              >Why rent through Marco's Property Rentals?</span
             >
             <span
               class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
@@ -390,9 +382,9 @@ themeColor: "#072A54"
             >
           </summary>
           <p class="pt-[10px] text-navy">
-            We typically ask the tenant to pay a deposit equal to the monthly
-            rental price. All deposits are protected using the Tenancy Deposit
-            Scheme Northern Ireland.
+            We combine professional support, clear communication, and quality
+            homes to create a smooth and stress-free renting experience from
+            start to finish.
           </p>
         </details>
         <details
@@ -404,7 +396,7 @@ themeColor: "#072A54"
             class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
           >
             <span class="heading-6-bold text-navy"
-              >What documents do I need to provide to rent a property?</span
+              >How do I apply for a rental property?</span
             >
             <span
               class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
@@ -412,8 +404,12 @@ themeColor: "#072A54"
             >
           </summary>
           <p class="pt-[10px] text-navy">
-            Requirements include a valid proof of identity and payslips dated
-            for previous 3 months of employment.
+            Like what you see? Start by booking a viewing to explore the
+            property, ask questions, and make sure it's the right fit for you.
+            If you'd like to proceed, apply and our team will carry out
+            identity, income, and reference checks. Once approved, we'll prepare
+            your tenancy agreement, arrange a move-in date, and hand over the
+            keys so you can settle into your new home. 🏡✨
           </p>
         </details>
         <details
@@ -425,7 +421,7 @@ themeColor: "#072A54"
             class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
           >
             <span class="heading-6-bold text-navy"
-              >I have a dispute. Who do I contact?</span
+              >What documents will I need to provide?</span
             >
             <span
               class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
@@ -433,7 +429,11 @@ themeColor: "#072A54"
             >
           </summary>
           <p class="pt-[10px] text-navy">
-            This will be detailed in your tenancy agreement in section 1:8.
+            To process your application, we'll typically require proof of
+            identity, proof of address, evidence of income, relevant references,
+            and any required right-to-rent documentation. Providing all
+            documents promptly helps us complete the application process as
+            quickly as possible.
           </p>
         </details>
         <details
@@ -445,7 +445,7 @@ themeColor: "#072A54"
             class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
           >
             <span class="heading-6-bold text-navy"
-              >Is smoking allowed inside a property?</span
+              >Can I keep a pet in the property?</span
             >
             <span
               class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
@@ -453,8 +453,9 @@ themeColor: "#072A54"
             >
           </summary>
           <p class="pt-[10px] text-navy">
-            This is dependent on the property type and landlord. Contact us for
-            further information.
+            We know pets are family too! Some landlords happily welcome pets,
+            while others may have restrictions. Any pet-related conditions will
+            be clearly outlined in your tenancy agreement.
           </p>
         </details>
         <details
@@ -466,7 +467,7 @@ themeColor: "#072A54"
             class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
           >
             <span class="heading-6-bold text-navy"
-              >Are pets allowed inside a property?</span
+              >How much deposit will I need to pay?</span
             >
             <span
               class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
@@ -474,8 +475,296 @@ themeColor: "#072A54"
             >
           </summary>
           <p class="pt-[10px] text-navy">
-            This is dependent on the property type and landlord. Contact us for
-            further information.
+            We typically request a deposit equivalent to one month's rent, which
+            is securely protected through the Tenancy Deposit Scheme Northern
+            Ireland. Provided rent has been paid and the property is returned in
+            good condition, the deposit can usually be refunded in full at the
+            end of the tenancy.
+          </p>
+        </details>
+        <details class="group py-[20px] border-b border-black" data-reveal>
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy">When is my rent due?</span>
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Rent is usually paid monthly on an agreed date, with payment details
+            provided before your tenancy begins. We recommend setting up a
+            standing order to ensure payments are made on time. Keeping on top
+            of rent payments helps ensure a stress-free tenancy.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="60"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >How can I build a positive tenant-landlord relationship?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Communication is key. Be approachable, professional, and responsive.
+            Respect your landlord's property, fulfil your responsibilities, and
+            raise any concerns promptly. A positive relationship often leads to
+            a smoother tenancy for everyone.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="120"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >Who is responsible for repairs and maintenance?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Generally, landlords are responsible for maintaining the property,
+            structural issues, and essential services. Tenants are responsible
+            for keeping the property clean, tidy, and reporting maintenance
+            issues as soon as they arise. Teamwork makes the dream work!
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="180"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >What should I do if something breaks?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Report it to your landlord as soon as possible and provide photos
+            where you can. Please avoid carrying out repairs yourself unless
+            authorised, and in an emergency always prioritise safety and contact
+            the appropriate emergency services if needed.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="240"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >Can the landlord enter the property whenever they want?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Not quite! Tenants have a right to quiet enjoyment of their home.
+            Landlords must generally provide advance notice before entering,
+            except in genuine emergencies like a flood or fire.
+          </p>
+        </details>
+        <details class="group py-[20px] border-b border-black" data-reveal>
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >How often will property inspections take place?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Most inspections occur every 3 to 6 months. Regular inspections help
+            identify small issues before they turn into expensive surprises.
+            Advance notice will be given before someone enters the property.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="60"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >Can tenants decorate the property?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            That depends on the tenancy agreement. Some landlords are happy with
+            a fresh coat of paint, while others prefer to approve any changes
+            beforehand. Setting expectations early helps avoid awkward
+            conversations later.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="120"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >Can I have guests stay at the property?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Short-term guests are usually welcome but longer stays may require
+            landlord approval. Tenants are responsible for ensuring their guests
+            respect the property, neighbours, and the terms of the tenancy
+            agreement.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="180"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >What should I do if I receive a complaint from a neighbour?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Good neighbours make great communities. If a neighbour raises a
+            concern, listen respectfully, address the issue calmly, and be
+            considerate of others. Contact your landlord if you need support
+            resolving the matter.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="240"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >What happens if I pay my rent late?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            If you're struggling to make a payment, contact us as soon as
+            possible. The tenancy agreement outlines the procedures regarding
+            late payments, payment plans, and any notices that may be required.
+          </p>
+        </details>
+        <details class="group py-[20px] border-b border-black" data-reveal>
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >What if I want to leave before the tenancy ends?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            Check the tenancy agreement first. In some cases, tenants may be
+            able to leave early by mutual agreement or under specific
+            conditions. Every situation is different, so it's important to
+            review the contract carefully.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="60"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >How can I ensure I receive my deposit back?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            To maximise the likelihood of receiving your deposit back in full,
+            pay your rent on time and keep the property clean and well
+            maintained. Report any maintenance issues promptly and take
+            reasonable care of the property throughout your tenancy. When moving
+            out, remove all personal belongings, return all keys and leave the
+            property in good condition, allowing for fair wear and tear.
+          </p>
+        </details>
+        <details
+          class="group py-[20px] border-b border-black"
+          data-reveal
+          data-reveal-delay="120"
+        >
+          <summary
+            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          >
+            <span class="heading-6-bold text-navy"
+              >What should I do at the end of my tenancy?</span
+            >
+            <span
+              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out text-navy"
+              >+</span
+            >
+          </summary>
+          <p class="pt-[10px] text-navy">
+            At the end of your tenancy, provide the required notice and remove
+            all personal belongings. Clean the property thoroughly and return
+            all keys. You may also be asked to attend a final inspection and
+            provide a forwarding address to help ensure a smooth move-out
+            process.
           </p>
         </details>
       </div>
@@ -543,8 +832,35 @@ themeColor: "#072A54"
                 d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.62-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
               ></path>
             </svg>
-            <a href="tel:{{ site.phone }}" class="text-eggshell"
-              >{{ site.phone }}</a
+            <a
+              href="https://wa.me/{{ site.whatsapp }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-eggshell"
+              >Message us on WhatsApp</a
+            >
+          </div>
+          <div class="flex flex-row gap-[20px] items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[32px] h-[32px]"
+              fill="#E8715B"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M224,128A96,96,0,0,1,79.93,211.11h0L42.54,223.58a8,8,0,0,1-10.12-10.12l12.47-37.39h0A96,96,0,1,1,224,128Z"
+                opacity="0.2"
+              ></path>
+              <path
+                d="M181.66,106.34a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32,0L112,123.31,85.66,149.66a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0L144,132.69l26.34-26.35A8,8,0,0,1,181.66,106.34ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.52a8,8,0,0,1,6.54.67A88,88,0,0,0,216,128Z"
+              ></path>
+            </svg>
+            <a
+              href="https://m.me/{{ site.messenger }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-eggshell"
+              >Message us on Messenger</a
             >
           </div>
         </div>

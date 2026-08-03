@@ -9,8 +9,9 @@ export default {
       : process.env.CF_PAGES_URL || "http://localhost:8080",
   logo: "",
   image: "SEO Preview Image Card (1200 x 675 pixels)",
-  phone: "+44 000 000 000",
-  whatsapp: "44000000000",
+  phone: "+44 7783 141 269",
+  whatsapp: "447783141269",
+  messenger: "example",
   email: "info@marcospropertyrentals.com",
   social: {
     instagram: "https://instagram.com/example",
