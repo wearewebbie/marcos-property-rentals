@@ -3,14 +3,17 @@ layout: base/base.njk
 title: "Hello World"
 description: "Hello"
 permalink: tenant/
+themeColor: "#072A54"
 ---
 
 {% include "header/header-tenant.njk" %}
 
 <!-- Landing Section -->
-<section class="py-[100px] min-h-screen bg-eggshell flex items-center">
+<section
+  class="lg:min-h-screen pt-[100px] lg:pt-[0px] bg-eggshell flex lg:items-center relative"
+>
   <div class="container">
-    <div class="flex flex-col lg:flex-row gap-[40px] items-center">
+    <div class="flex flex-col lg:flex-row gap-[80px] items-center">
       <div class="flex flex-col gap-[40px] flex-1">
         <div class="flex flex-col gap-[20px]">
           <h1 class="heading-1-bold text-navy max-w-sm" data-reveal>
@@ -35,12 +38,12 @@ permalink: tenant/
         </div>
       </div>
       <div
-        class="flex-1 justify-center items-center flex"
+        class="flex justify-center items-center flex-1"
         data-reveal
         data-reveal-delay="300"
       >
         <svg
-          class="h-[500px] w-auto text-navy"
+          class="h-[300px] lg:h-[500px] w-auto text-navy"
           viewBox="0 0 256 340"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +315,7 @@ permalink: tenant/
 </section>
 
 <!-- How to Apply Section -->
-<section class="py-[100px] bg-eggshell">
+<section class="pt-[100px] bg-eggshell">
   <div class="container">
     <div class="flex flex-col gap-[40px]">
       <h2 class="heading-2-bold text-navy" data-reveal>How to Apply</h2>
@@ -320,7 +323,7 @@ permalink: tenant/
         <div class="flex flex-col gap-[10px]" data-reveal>
           <p class="heading-3-bold text-peach">1</p>
           <h3 class="heading-6-bold text-navy">Browse & Enquire</h3>
-          <p class="small-normal text-navy">
+          <p class="body-normal text-navy">
             Explore our available properties and get in touch to arrange a
             viewing that suits your schedule.
           </p>
@@ -332,7 +335,7 @@ permalink: tenant/
         >
           <p class="heading-3-bold text-peach">2</p>
           <h3 class="heading-6-bold text-navy">View the Property</h3>
-          <p class="small-normal text-navy">
+          <p class="body-normal text-navy">
             View the property in person and let our team answer any questions
             about the tenancy terms.
           </p>
@@ -344,7 +347,7 @@ permalink: tenant/
         >
           <p class="heading-3-bold text-peach">3</p>
           <h3 class="heading-6-bold text-navy">Apply & Reference</h3>
-          <p class="small-normal text-navy">
+          <p class="body-normal text-navy">
             Submit your application so our team can carry out identity, income
             and reference checks fast.
           </p>
@@ -356,7 +359,7 @@ permalink: tenant/
         >
           <p class="heading-3-bold text-peach">4</p>
           <h3 class="heading-6-bold text-navy">Sign & Move In</h3>
-          <p class="small-normal text-navy">
+          <p class="body-normal text-navy">
             Once approved, we'll prepare your agreement, protect your deposit,
             and arrange your move in date.
           </p>

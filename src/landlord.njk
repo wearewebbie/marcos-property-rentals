@@ -3,14 +3,17 @@ layout: base/base.njk
 title: "Hello World"
 description: "Hello"
 permalink: landlord/
+themeColor: "#E2E0CB"
 ---
 
 {% include "header/header-landlord.njk" %}
 
 <!-- Landing Section -->
-<section class="min-h-screen bg-navy flex items-center">
+<section
+  class="lg:min-h-screen pt-[100px] lg:pt-[0px] bg-navy flex lg:items-center relative"
+>
   <div class="container">
-    <div class="flex flex-col lg:flex-row gap-[40px] items-center">
+    <div class="flex flex-col lg:flex-row gap-[80px] items-center">
       <div class="flex flex-col gap-[40px] flex-1">
         <div class="flex flex-col gap-[20px]">
           <h1 class="heading-1-bold text-eggshell" data-reveal>
@@ -34,12 +37,12 @@ permalink: landlord/
         </div>
       </div>
       <div
-        class="flex-1 justify-center items-center flex"
+        class="flex justify-center items-center flex-1"
         data-reveal
         data-reveal-delay="300"
       >
         <svg
-          class="h-[500px] w-auto text-navy"
+          class="h-[300px] lg:h-[500px] w-auto text-navy"
           viewBox="0 0 256 400"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -1159,7 +1162,7 @@ permalink: landlord/
 <!-- Contact Section -->
 <section class="py-[100px] bg-navy" id="contact">
   <div class="container">
-    <div class="flex flex-col lg:flex-row gap-[100px]">
+    <div class="flex flex-col lg:flex-row gap-[40px] lg:gap-[100px]">
       <div class="flex flex-col gap-[40px] flex-1" data-reveal>
         <h2 class="heading-2-bold text-eggshell">Get in Touch</h2>
         <div class="flex flex-col gap-[20px]">
