@@ -15,7 +15,8 @@ export default {
   email: "info@marcospropertyrentals.com",
   social: {
     instagram: "https://instagram.com/example",
-    facebook: "https://facebook.com/example",
+    facebook:
+      "https://www.facebook.com/people/Marcos-Property-Rentals/61593027022929/",
     tiktok: "",
   },
 };

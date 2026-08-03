@@ -18,28 +18,191 @@ layout: base/base.njk
   <div class="container">
     {% if images and images.length > 1 %}
     <div
-      class="grid grid-cols-3 grid-rows-2 gap-[10px] h-[300px] lg:h-[500px]"
+      class="relative grid grid-cols-2 grid-rows-[300px_180px] gap-[10px] lg:grid-cols-3 lg:grid-rows-2 lg:h-[500px]"
       data-reveal
     >
-      <div class="col-span-2 row-span-2 overflow-hidden border border-navy">
+      <span
+        class="pointer-events-none absolute bottom-[10px] right-[10px] z-10 flex flex-row items-center gap-[5px] bg-navy/80 text-eggshell small-bold px-[10px] py-[5px]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-[16px] h-[16px]"
+          fill="currentColor"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm-44,76a36,36,0,1,1-36-36A36,36,0,0,1,164,132Z"
+          ></path>
+        </svg>
+        {{ images.length }}<span class="hidden lg:inline">&nbsp;Photos</span>
+      </span>
+      <button
+        type="button"
+        class="gallery-tile group relative col-span-2 row-span-1 overflow-hidden border border-navy cursor-pointer lg:row-span-2"
+        data-index="0"
+        aria-label="View photo 1 of {{ images.length }}"
+      >
         {% image images[0].url, images[0].alt, "w-full h-full object-cover" %}
-      </div>
+        <span
+          class="absolute inset-0 flex items-center justify-center bg-navy/0 group-hover:bg-navy/30 transition-colors duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-[32px] h-[32px] text-peach opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M109.66,146.34a8,8,0,0,1,0,11.32L83.31,184l18.35,18.34A8,8,0,0,1,96,216H48a8,8,0,0,1-8-8V160a8,8,0,0,1,13.66-5.66L72,172.69l26.34-26.35A8,8,0,0,1,109.66,146.34ZM83.31,72l18.35-18.34A8,8,0,0,0,96,40H48a8,8,0,0,0-8,8V96a8,8,0,0,0,13.66,5.66L72,83.31l26.34,26.35a8,8,0,0,0,11.32-11.32ZM208,40H160a8,8,0,0,0-5.66,13.66L172.69,72,146.34,98.34a8,8,0,0,0,11.32,11.32L184,83.31l18.34,18.35A8,8,0,0,0,216,96V48A8,8,0,0,0,208,40Zm3.06,112.61a8,8,0,0,0-8.72,1.73L184,172.69l-26.34-26.35a8,8,0,0,0-11.32,11.32L172.69,184l-18.35,18.34A8,8,0,0,0,160,216h48a8,8,0,0,0,8-8V160A8,8,0,0,0,211.06,152.61Z"
+            ></path>
+          </svg>
+        </span>
+      </button>
       {% for image in images %} {% if loop.index0 > 0 and loop.index0 < 3 %}
-      <div class="overflow-hidden border border-navy">
+      <button
+        type="button"
+        class="gallery-tile group relative overflow-hidden border border-navy cursor-pointer"
+        data-index="{{ loop.index0 }}"
+        aria-label="View photo {{ loop.index0 + 1 }} of {{ images.length }}"
+      >
         {% image image.url, image.alt, "w-full h-full object-cover" %}
-      </div>
+        <span
+          class="absolute inset-0 flex items-center justify-center bg-navy/0 group-hover:bg-navy/30 transition-colors duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-[32px] h-[32px] text-peach opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M109.66,146.34a8,8,0,0,1,0,11.32L83.31,184l18.35,18.34A8,8,0,0,1,96,216H48a8,8,0,0,1-8-8V160a8,8,0,0,1,13.66-5.66L72,172.69l26.34-26.35A8,8,0,0,1,109.66,146.34ZM83.31,72l18.35-18.34A8,8,0,0,0,96,40H48a8,8,0,0,0-8,8V96a8,8,0,0,0,13.66,5.66L72,83.31l26.34,26.35a8,8,0,0,0,11.32-11.32ZM208,40H160a8,8,0,0,0-5.66,13.66L172.69,72,146.34,98.34a8,8,0,0,0,11.32,11.32L184,83.31l18.34,18.35A8,8,0,0,0,216,96V48A8,8,0,0,0,208,40Zm3.06,112.61a8,8,0,0,0-8.72,1.73L184,172.69l-26.34-26.35a8,8,0,0,0-11.32,11.32L172.69,184l-18.35,18.34A8,8,0,0,0,160,216h48a8,8,0,0,0,8-8V160A8,8,0,0,0,211.06,152.61Z"
+            ></path>
+          </svg>
+        </span>
+      </button>
       {% endif %} {% endfor %}
     </div>
     {% elif images and images.length == 1 %}
-    <div
-      class="h-[300px] lg:h-[500px] overflow-hidden border border-navy"
+    <button
+      type="button"
+      class="gallery-tile group relative h-[300px] lg:h-[500px] w-full overflow-hidden border border-navy cursor-pointer"
+      data-index="0"
+      aria-label="View photo"
       data-reveal
     >
       {% image images[0].url, images[0].alt, "w-full h-full object-cover" %}
-    </div>
+      <span
+        class="absolute inset-0 flex items-center justify-center bg-navy/0 group-hover:bg-navy/30 transition-colors duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-[32px] h-[32px] text-peach opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          fill="currentColor"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M109.66,146.34a8,8,0,0,1,0,11.32L83.31,184l18.35,18.34A8,8,0,0,1,96,216H48a8,8,0,0,1-8-8V160a8,8,0,0,1,13.66-5.66L72,172.69l26.34-26.35A8,8,0,0,1,109.66,146.34ZM83.31,72l18.35-18.34A8,8,0,0,0,96,40H48a8,8,0,0,0-8,8V96a8,8,0,0,0,13.66,5.66L72,83.31l26.34,26.35a8,8,0,0,0,11.32-11.32ZM208,40H160a8,8,0,0,0-5.66,13.66L172.69,72,146.34,98.34a8,8,0,0,0,11.32,11.32L184,83.31l18.34,18.35A8,8,0,0,0,216,96V48A8,8,0,0,0,208,40Zm3.06,112.61a8,8,0,0,0-8.72,1.73L184,172.69l-26.34-26.35a8,8,0,0,0-11.32,11.32L172.69,184l-18.35,18.34A8,8,0,0,0,160,216h48a8,8,0,0,0,8-8V160A8,8,0,0,0,211.06,152.61Z"
+          ></path>
+        </svg>
+      </span>
+    </button>
     {% endif %}
   </div>
 </section>
+
+{% if images and images.length > 0 %}
+<!-- Gallery Lightbox -->
+<div
+  id="galleryLightbox"
+  class="hidden fixed inset-0 z-[100] bg-navy/95 flex flex-col"
+>
+  <button
+    type="button"
+    id="galleryLightboxClose"
+    aria-label="Close gallery"
+    class="absolute top-[20px] right-[20px] z-10 text-eggshell hover:text-peach transition-colors duration-200 cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-[32px] h-[32px]"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+    >
+      <path
+        d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+      ></path>
+    </svg>
+  </button>
+  <div class="swiper gallery-swiper flex-1 min-w-0 w-full">
+    <div class="swiper-wrapper">
+      {% for image in images %}
+      <div
+        class="swiper-slide flex items-center justify-center px-[10px] py-[20px] lg:px-[60px] lg:py-[100px]"
+      >
+        {% image image.url, image.alt, "max-h-full max-w-full w-auto h-auto
+        object-contain", { loading: "eager" } %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev text-eggshell"></div>
+    <div class="swiper-button-next text-eggshell"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var lightbox = document.getElementById("galleryLightbox");
+    var closeBtn = document.getElementById("galleryLightboxClose");
+    var tiles = document.querySelectorAll(".gallery-tile");
+    if (!lightbox || !closeBtn || tiles.length === 0) return;
+
+    var swiper = null;
+
+    function openLightbox(index) {
+      lightbox.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+
+      if (!swiper) {
+        swiper = new Swiper(".gallery-swiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          keyboard: { enabled: true },
+          initialSlide: index,
+        });
+      } else {
+        swiper.update();
+        swiper.slideTo(index, 0);
+      }
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+
+    tiles.forEach(function (tile) {
+      tile.addEventListener("click", function () {
+        openLightbox(parseInt(tile.dataset.index, 10));
+      });
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !lightbox.classList.contains("hidden")) {
+        closeLightbox();
+      }
+    });
+  });
+</script>
+{% endif %}
 
 <!-- Summary -->
 <section class="py-[40px] bg-eggshell">

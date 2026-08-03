@@ -1074,410 +1074,96 @@ themeColor: "#E2E0CB"
   <div class="container">
     <div class="flex flex-col gap-[40px] text-navy">
       <h2 class="heading-2-bold" data-reveal>Frequently Asked Questions</h2>
-      <div class="flex flex-col">
-        <details class="group py-[20px] border-b border-black" data-reveal>
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+      <div class="relative">
+        <div class="flex flex-col">
+          {% for faq in faqsLandlord.slice(0, 8) %}
+          <details
+            class="group py-[20px] border-b border-black"
+            data-reveal
+            {%
+            if
+            loop.index0
+            %
+            5
+            !="0"
+            %}data-reveal-delay="{{ (loop.index0 % 5) * 80 }}"
+            {%
+            endif
+            %}
           >
-            <span class="heading-6-bold">How much rent will I receive?</span>
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
+            <summary
+              class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
             >
-          </summary>
-          <p class="pt-[10px]">
-            Pricing a rental property is all about finding the sweet spot. We
-            assess comparable properties in your area, considering location,
-            size, amenities, and market trends. Set the rent too high and you
-            may struggle to find tenants, but price it competitively and you'll
-            be more likely to attract reliable tenants quickly.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="80"
+              <span class="heading-6-bold">{{ faq.question }}</span>
+              <span
+                class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
+                >+</span
+              >
+            </summary>
+            <p class="pt-[10px]">{{ faq.answer }}</p>
+            {% if faq.upsell %}
+            <p class="pt-[10px] text-peach">{{ faq.upsell }}</p>
+            {% endif %}
+          </details>
+          {% endfor %} {% if faqsLandlord.length > 8 %}
+          <input type="checkbox" id="expandFaqsLandlord" class="peer hidden" />
+          <div id="faqsLandlordClip" class="max-h-0 overflow-hidden">
+            {% for faq in faqsLandlord.slice(8) %}
+            <details class="group py-[20px] border-b border-black">
+              <summary
+                class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+              >
+                <span class="heading-6-bold">{{ faq.question }}</span>
+                <span
+                  class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
+                  >+</span
+                >
+              </summary>
+              <p class="pt-[10px]">{{ faq.answer }}</p>
+              {% if faq.upsell %}
+              <p class="pt-[10px] text-peach">{{ faq.upsell }}</p>
+              {% endif %}
+            </details>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% if faqsLandlord.length > 8 %}
+        <div
+          class="pointer-events-none absolute bottom-[64px] left-0 w-full h-[100px] bg-gradient-to-t from-eggshell to-transparent peer-checked:hidden"
+        ></div>
+        <label
+          for="expandFaqsLandlord"
+          class="flex justify-center py-[20px] cursor-pointer peer-checked:rotate-180"
         >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
+          <span class="sr-only">Show all questions</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-[24px] h-[24px]"
+            fill="#121212"
+            viewBox="0 0 256 256"
           >
-            <span class="heading-6-bold"
-              >How will Marco's Property Rentals market my property
-              effectively?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            First impressions count! High-quality photographs, an engaging
-            property description, and highlighting local amenities can make all
-            the difference. The better your property is presented, the more
-            interest it is likely to generate.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="160"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold">Should I allow pets?</span>
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Pets can make great tenants too! Allowing pets may increase interest
-            in your property and widen your pool of applicants. However, it's
-            important to consider potential wear and tear and to have a clear
-            pet policy in place.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="240"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >What insurance do I need as a landlord?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Landlord insurance is designed specifically for rental properties
-            and can cover the building, liability risks, and loss of rental
-            income in certain situations. Standard homeowner insurance often
-            isn't enough when tenants are involved.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="320"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >How does Marco's Property Rentals find excellent tenants?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Every prospective tenant undergoes checks on their employment
-            status, income, and credit history. We also request a previous
-            landlord reference to help verify their rental track record, giving
-            you greater peace of mind before handing over the keys.
-          </p>
-        </details>
-        <details class="group py-[20px] border-b border-black" data-reveal>
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >Do I need a written tenancy agreement?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Absolutely! A tenancy agreement is the rulebook for the tenancy.
-            Marco's Property Rentals prepares a comprehensive written agreement
-            that clearly outlines the rights and responsibilities of both
-            landlord and tenant, helping avoid confusion further down the road.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="80"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >How much security deposit can I collect?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            We typically request a deposit equivalent to one month's rent. To
-            keep everything secure and compliant, all deposits are protected
-            through the Tenancy Deposit Scheme Northern Ireland.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="160"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >Can tenants decorate the property?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            That depends on the tenancy agreement. Some landlords are happy with
-            a fresh coat of paint, while others prefer to approve any changes
-            beforehand. Setting expectations early helps avoid awkward
-            conversations later.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="240"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >Can I enter the property whenever I want?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Not quite! While it's your property, tenants have a right to quiet
-            enjoyment of their home. Landlords must generally provide advance
-            notice before entering, except in genuine emergencies like a flood
-            or fire.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="320"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >How often should I inspect my property?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Most landlords carry out inspections every 3 to 6 months. Regular
-            inspections help identify small issues before they turn into
-            expensive surprises. Just remember to provide proper notice and
-            follow legal access requirements.
-          </p>
-          <p class="pt-[10px] text-peach">
-            💡 Rather not spend your weekends doing inspections? Upgrade to our
-            Package Duo and we'll take care of them for you.
-          </p>
-        </details>
-        <details class="group py-[20px] border-b border-black" data-reveal>
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold">Who is responsible for repairs?</span>
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Generally, landlords are responsible for maintaining the property,
-            structural issues, and essential services. Tenants are responsible
-            for keeping the property clean, tidy, and reporting maintenance
-            issues as soon as they arise. Teamwork makes the dream work!
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="80"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >What should I do if a tenant pays rent late?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            The first step is to contact the tenant and understand what's
-            causing the delay. The tenancy agreement will outline the
-            appropriate procedures regarding late payments, payment plans, and
-            notices.
-          </p>
-          <p class="pt-[10px] text-peach">
-            💡 Want to leave the chasing to us? Upgrade to our Package Duo and
-            we'll handle the process on your behalf.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="160"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >What happens if a tenant damages the property?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            If damage occurs, it's important to document everything with
-            photographs and obtain repair quotations. Depending on the
-            circumstances, the cost may be recoverable from the tenant or their
-            deposit in line with relevant regulations.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="240"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >How do I handle complaints from neighbours?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Listen to the complaint, investigate fairly, and discuss the matter
-            with the tenant if necessary. Keeping a record of all communications
-            and actions taken is always a good idea.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="320"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >How can I build a positive landlord-tenant relationship?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Communication is key. Be approachable, professional, and responsive.
-            Respect your tenant's privacy, fulfil your obligations, and treat
-            people fairly. A good relationship often leads to a smoother tenancy
-            and fewer headaches for everyone.
-          </p>
-        </details>
-        <details class="group py-[20px] border-b border-black" data-reveal>
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >How can I reduce tenant turnover?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Happy tenants tend to stay longer. Responding quickly to maintenance
-            issues, communicating openly, and keeping the property in great
-            condition can all help encourage long-term tenancies.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="80"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >What should I do if a tenant wants to break the lease
-              early?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Check the tenancy agreement first. In some cases, tenants may be
-            able to leave early by mutual agreement or under specific
-            conditions. Every situation is different, so it's important to
-            review the contract carefully.
-          </p>
-        </details>
-        <details
-          class="group py-[20px] border-b border-black"
-          data-reveal
-          data-reveal-delay="160"
-        >
-          <summary
-            class="cursor-pointer list-none flex flex-row justify-between items-center gap-[20px]"
-          >
-            <span class="heading-6-bold"
-              >What should I do at the end of a tenancy?</span
-            >
-            <span
-              class="text-[32px] leading-none group-open:rotate-45 transition-transform duration-300 ease-in-out"
-              >+</span
-            >
-          </summary>
-          <p class="pt-[10px]">
-            Carry out a final inspection, compare the property against the
-            original inventory, and document any changes. This helps ensure a
-            smooth and fair deposit return process for everyone involved.
-          </p>
-        </details>
+            <path
+              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+            ></path>
+          </svg>
+        </label>
+        {% endif %}
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    var checkbox = document.getElementById("expandFaqsLandlord");
+    var clip = document.getElementById("faqsLandlordClip");
+    if (!checkbox || !clip) return;
+    checkbox.addEventListener("change", function () {
+      clip.style.maxHeight = checkbox.checked ? clip.scrollHeight + "px" : "";
+    });
+  })();
+</script>
 
 <!-- Contact Section -->
 <section class="py-[100px] bg-navy" id="contact">
@@ -1485,90 +1171,111 @@ themeColor: "#E2E0CB"
     <div class="flex flex-col lg:flex-row gap-[40px] lg:gap-[100px]">
       <div class="flex flex-col gap-[40px] flex-1" data-reveal>
         <h2 class="heading-2-bold text-eggshell">Get in Touch</h2>
-        <div class="flex flex-col gap-[20px]">
-          <div class="flex flex-row gap-[20px] items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-[32px] h-[32px]"
-              fill="#E8715B"
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
-                opacity="0.2"
-              ></path>
-              <path
-                d="M128,24a104,104,0,0,0,0,208c21.51,0,44.1-6.48,60.43-17.33a8,8,0,0,0-8.86-13.33C166,210.38,146.21,216,128,216a88,88,0,1,1,88-88c0,26.45-10.88,32-20,32s-20-5.55-20-32V88a8,8,0,0,0-16,0v4.26a48,48,0,1,0,5.93,65.1c6,12,16.35,18.64,30.07,18.64,22.54,0,36-17.94,36-48A104.11,104.11,0,0,0,128,24Zm0,136a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
-              ></path>
-            </svg>
-            <a href="mailto:{{ site.email }}" class="text-eggshell"
-              >{{ site.email }}</a
-            >
+        <div class="flex flex-col gap-[40px]">
+          <div class="flex flex-col gap-[20px]">
+            <div class="flex flex-row gap-[20px] items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[32px] h-[32px]"
+                fill="#E8715B"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M128,24a104,104,0,0,0,0,208c21.51,0,44.1-6.48,60.43-17.33a8,8,0,0,0-8.86-13.33C166,210.38,146.21,216,128,216a88,88,0,1,1,88-88c0,26.45-10.88,32-20,32s-20-5.55-20-32V88a8,8,0,0,0-16,0v4.26a48,48,0,1,0,5.93,65.1c6,12,16.35,18.64,30.07,18.64,22.54,0,36-17.94,36-48A104.11,104.11,0,0,0,128,24Zm0,136a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                ></path>
+              </svg>
+              <a href="mailto:{{ site.email }}" class="text-eggshell"
+                >{{ site.email }}</a
+              >
+            </div>
+            <div class="flex flex-row gap-[20px] items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[32px] h-[32px]"
+                fill="#E8715B"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M215.94,182.08A48.33,48.33,0,0,1,168,224,136,136,0,0,1,32,88,48.33,48.33,0,0,1,73.92,40.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L81.32,125a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59l25-21.3a8,8,0,0,1,7.59-.69l47.16,21.13A8,8,0,0,1,215.94,182.08Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M144.27,45.93a8,8,0,0,1,9.8-5.66,86.22,86.22,0,0,1,61.66,61.66,8,8,0,0,1-5.66,9.8A8.23,8.23,0,0,1,208,112a8,8,0,0,1-7.73-5.94,70.35,70.35,0,0,0-50.33-50.33A8,8,0,0,1,144.27,45.93Zm-2.33,41.8c13.79,3.68,22.65,12.54,26.33,26.33A8,8,0,0,0,176,120a8.23,8.23,0,0,0,2.07-.27,8,8,0,0,0,5.66-9.8c-5.12-19.16-18.5-32.54-37.66-37.66a8,8,0,1,0-4.13,15.46Zm81.94,95.35A56.26,56.26,0,0,1,168,232C88.6,232,24,167.4,24,88A56.26,56.26,0,0,1,72.92,32.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,109.39,104c-.18.27-.37.52-.57.77L88,129.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,223.88,183.08Zm-15.88-2s-.07,0-.11,0h0l-47-21.05-24.35,20.71a8.44,8.44,0,0,1-.74.56,16,16,0,0,1-15.75,1.14c-18.73-9.05-37.4-27.58-46.46-46.11a16,16,0,0,1,1-15.7,6.13,6.13,0,0,1,.57-.77L96,95.15l-21-47a.61.61,0,0,1,0-.12A40.2,40.2,0,0,0,40,88,128.14,128.14,0,0,0,168,216,40.21,40.21,0,0,0,208,181.07Z"
+                ></path>
+              </svg>
+              <a href="tel:{{ site.phone }}" class="text-eggshell"
+                >{{ site.phone }}</a
+              >
+            </div>
           </div>
           <div class="flex flex-row gap-[20px] items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-[32px] h-[32px]"
-              fill="#E8715B"
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M215.94,182.08A48.33,48.33,0,0,1,168,224,136,136,0,0,1,32,88,48.33,48.33,0,0,1,73.92,40.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L81.32,125a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59l25-21.3a8,8,0,0,1,7.59-.69l47.16,21.13A8,8,0,0,1,215.94,182.08Z"
-                opacity="0.2"
-              ></path>
-              <path
-                d="M144.27,45.93a8,8,0,0,1,9.8-5.66,86.22,86.22,0,0,1,61.66,61.66,8,8,0,0,1-5.66,9.8A8.23,8.23,0,0,1,208,112a8,8,0,0,1-7.73-5.94,70.35,70.35,0,0,0-50.33-50.33A8,8,0,0,1,144.27,45.93Zm-2.33,41.8c13.79,3.68,22.65,12.54,26.33,26.33A8,8,0,0,0,176,120a8.23,8.23,0,0,0,2.07-.27,8,8,0,0,0,5.66-9.8c-5.12-19.16-18.5-32.54-37.66-37.66a8,8,0,1,0-4.13,15.46Zm81.94,95.35A56.26,56.26,0,0,1,168,232C88.6,232,24,167.4,24,88A56.26,56.26,0,0,1,72.92,32.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,109.39,104c-.18.27-.37.52-.57.77L88,129.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,223.88,183.08Zm-15.88-2s-.07,0-.11,0h0l-47-21.05-24.35,20.71a8.44,8.44,0,0,1-.74.56,16,16,0,0,1-15.75,1.14c-18.73-9.05-37.4-27.58-46.46-46.11a16,16,0,0,1,1-15.7,6.13,6.13,0,0,1,.57-.77L96,95.15l-21-47a.61.61,0,0,1,0-.12A40.2,40.2,0,0,0,40,88,128.14,128.14,0,0,0,168,216,40.21,40.21,0,0,0,208,181.07Z"
-              ></path>
-            </svg>
-            <a href="tel:{{ site.phone }}" class="text-eggshell"
-              >{{ site.phone }}</a
-            >
-          </div>
-          <div class="flex flex-row gap-[20px] items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-[32px] h-[32px]"
-              fill="#E8715B"
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M128,32A96,96,0,0,0,44.89,176.07L32.42,213.46a8,8,0,0,0,10.12,10.12l37.39-12.47A96,96,0,1,0,128,32Zm24,152a80,80,0,0,1-80-80,32,32,0,0,1,32-32l16,32-12.32,18.47a48.19,48.19,0,0,0,25.85,25.85L152,136l32,16A32,32,0,0,1,152,184Z"
-                opacity="0.2"
-              ></path>
-              <path
-                d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.62-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
-              ></path>
-            </svg>
             <a
               href="https://wa.me/{{ site.whatsapp }}"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-eggshell"
-              >Message us on WhatsApp</a
+              aria-label="Message us on WhatsApp"
             >
-          </div>
-          <div class="flex flex-row gap-[20px] items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-[32px] h-[32px]"
-              fill="#E8715B"
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M224,128A96,96,0,0,1,79.93,211.11h0L42.54,223.58a8,8,0,0,1-10.12-10.12l12.47-37.39h0A96,96,0,1,1,224,128Z"
-                opacity="0.2"
-              ></path>
-              <path
-                d="M181.66,106.34a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32,0L112,123.31,85.66,149.66a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0L144,132.69l26.34-26.35A8,8,0,0,1,181.66,106.34ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.52a8,8,0,0,1,6.54.67A88,88,0,0,0,216,128Z"
-              ></path>
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[32px] h-[32px]"
+                fill="#E8715B"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M128,32A96,96,0,0,0,44.89,176.07L32.42,213.46a8,8,0,0,0,10.12,10.12l37.39-12.47A96,96,0,1,0,128,32Zm24,152a80,80,0,0,1-80-80,32,32,0,0,1,32-32l16,32-12.32,18.47a48.19,48.19,0,0,0,25.85,25.85L152,136l32,16A32,32,0,0,1,152,184Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.62-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
+                ></path>
+              </svg>
+            </a>
             <a
               href="https://m.me/{{ site.messenger }}"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-eggshell"
-              >Message us on Messenger</a
+              aria-label="Message us on Messenger"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[32px] h-[32px]"
+                fill="#E8715B"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M224,128A96,96,0,0,1,79.93,211.11h0L42.54,223.58a8,8,0,0,1-10.12-10.12l12.47-37.39h0A96,96,0,1,1,224,128Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M181.66,106.34a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32,0L112,123.31,85.66,149.66a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0L144,132.69l26.34-26.35A8,8,0,0,1,181.66,106.34ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.52a8,8,0,0,1,6.54.67A88,88,0,0,0,216,128Z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="{{ site.social.facebook }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Facebook page"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[32px] h-[32px]"
+                fill="#E8715B"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                  opacity="0.2"
+                ></path>
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -1577,7 +1284,11 @@ themeColor: "#E2E0CB"
         data-reveal
         data-reveal-delay="150"
       >
-        <form action="#" class="flex flex-col gap-[20px]">
+        <form
+          action="https://submit-form.com/9rpPPoRqr"
+          method="POST"
+          class="flex flex-col gap-[20px]"
+        >
           <div class="flex flex-col gap-[5px]">
             <label for="name" class="form-label text-eggshell"
               >Full Name*</label
@@ -1587,6 +1298,7 @@ themeColor: "#E2E0CB"
               id="name"
               name="name"
               class="form-input border-eggshell"
+              placeholder="Jane Smith"
               required
             />
           </div>
@@ -1597,6 +1309,7 @@ themeColor: "#E2E0CB"
               id="email"
               name="email"
               class="form-input border-eggshell"
+              placeholder="jane@example.com"
               required
             />
           </div>
@@ -1623,9 +1336,15 @@ themeColor: "#E2E0CB"
               name="message"
               rows="4"
               class="form-input border-eggshell"
+              placeholder="Tell us about your property..."
               required
             ></textarea>
           </div>
+          <input
+            type="hidden"
+            name="_redirect"
+            value="{{ site.url }}/success/"
+          />
           <button type="submit" class="button-primary-peach self-end">
             Submit
           </button>
