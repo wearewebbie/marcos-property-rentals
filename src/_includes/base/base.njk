@@ -1,92 +1,166 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth bg-eggshell">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title -->
+    <title>
+      {%- if title %}{{ title }} | {{ site.title }}{%- else %}{{ site.title
+      }}{%- endif %}
+    </title>
 
-  <!-- Title -->
-  <title>
-    {%- if title %}{{ title }} | {{ site.title }}{%- else %}{{ site.title }}{%- endif %}
-  </title>
+    <!-- Primary Meta -->
+    <meta name="description" content="{{ description or site.description }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
-  <!-- Primary Meta -->
-  <meta name="description" content="{{ description or site.description }}">
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ title or site.title }}" />
+    <meta
+      property="og:description"
+      content="{{ description or site.description }}"
+    />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    {%- if site.image %}
+    <meta property="og:image" content="{{ site.url }}{{ site.image }}" />
+    {%- endif %}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title or site.title }}">
-  <meta property="og:description" content="{{ description or site.description }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  {%- if site.image %}
-  <meta property="og:image" content="{{ site.url }}{{ site.image }}">
-  {%- endif %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title or site.title }}" />
+    <meta
+      name="twitter:description"
+      content="{{ description or site.description }}"
+    />
+    {%- if site.image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ site.image }}" />
+    {%- endif %}
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title or site.title }}">
-  <meta name="twitter:description" content="{{ description or site.description }}">
-  {%- if site.image %}
-  <meta name="twitter:image" content="{{ site.url }}{{ site.image }}">
-  {%- endif %}
+    <!-- Icons -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MPR" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <meta name="theme-color" content="{{ themeColor or '#072A54' }}" />
 
-  <!-- Icons -->
-  INSERT THE CODE THAT https://realfavicongenerator.net/ GENERATED FOR YOUR SITE HERE
-  <meta name="theme-color" content="#ffffff">
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/bundle.css" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/bundle.css">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="/assets/swiper/swiper-bundle.min.css" />
+    <script src="/assets/swiper/swiper-bundle.min.js" defer></script>
 
-  <!-- Swiper -->
-  <link rel="stylesheet" href="/assets/swiper/swiper-bundle.min.css">
-  <script src="/assets/swiper/swiper-bundle.min.js" defer></script>
+    <!-- Scroll Reveal -->
+    <script src="/js/scrollReveal.js" defer></script>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
 
-{
-  "@context": "https://schema.org",
-  "@type": "{{ site.schemaType or 'LocalBusiness' }}",
-  "name": "{{ site.title }}",
-  "url": "{{ site.url }}",
-  "description": "{{ site.description }}"
-  {%- if site.logo %},
-  "logo": "{{ site.url }}{{ site.logo }}"
-  {%- endif %}
-  {%- if site.image %},
-  "image": "{{ site.url }}{{ site.image }}"
-  {%- endif %}
-  {%- if site.phone %},
-  "telephone": "{{ site.phone }}"
-  {%- endif %}
-  {%- if site.email %},
-  "email": "{{ site.email }}"
-  {%- endif %}
-  {%- if site.social and site.social | length %},
-  "sameAs": [
-    {%- for key, value in site.social %}
-      "{{ value }}"{% if not loop.last %},{% endif %}
-    {%- endfor %}
-  ]
-  {%- endif %}
-}
-  </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "{{ site.schemaType or 'LocalBusiness' }}",
+        "name": "{{ site.title }}",
+        "url": "{{ site.url }}",
+        "description": "{{ site.description }}"
+        {%- if site.logo %},
+        "logo": "{{ site.url }}{{ site.logo }}"
+        {%- endif %}
+        {%- if site.image %},
+        "image": "{{ site.url }}{{ site.image }}"
+        {%- endif %}
+        {%- if site.phone %},
+        "telephone": "{{ site.phone }}"
+        {%- endif %}
+        {%- if site.email %},
+        "email": "{{ site.email }}"
+        {%- endif %}
+        {%- if site.social and site.social | length %},
+        "sameAs": [
+          {%- for key, value in site.social %}
+            "{{ value }}"{% if not loop.last %},{% endif %}
+          {%- endfor %}
+        ]
+        {%- endif %}
+      }
+    </script>
+  </head>
 
-</head>
+  <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only">
+      Skip to content
+    </a>
 
-<body>
+    <main id="main-content">{{- content | safe }}</main>
 
-  <a href="#main-content" class="sr-only focus:not-sr-only">
-    Skip to content
-  </a>
+    {% include "footer/footer.njk" %}
 
-  <main id="main-content">
-    {{- content | safe }}
-  </main>
+    <div
+      class="fixed right-[10px] bottom-[60px] z-50 flex flex-col items-center gap-[16px]"
+    >
+      <div class="relative">
+        <span
+          class="absolute inset-0 rounded-full bg-[#0084FF] messenger-pulse motion-reduce:animate-none"
+        ></span>
+        <a
+          href="https://m.me/{{ site.messenger }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with us on Messenger"
+          class="relative flex items-center justify-center w-14 h-14 bg-[#0084FF] rounded-full shadow-lg hover:scale-110 transition-transform duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="white"
+            class="w-7 h-7"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 0C5.24 0 0 4.952 0 11.64c0 3.499 1.434 6.521 3.769 8.61a.96.96 0 0 1 .323.683l.065 2.135a.96.96 0 0 0 1.347.85l2.381-1.053a.96.96 0 0 1 .641-.046A13 13 0 0 0 12 23.28c6.76 0 12-4.952 12-11.64S18.76 0 12 0m6.806 7.44c.522-.03.971.567.63 1.094l-4.178 6.457a.707.707 0 0 1-.977.208l-3.87-2.504a.44.44 0 0 0-.49.007l-4.363 3.01c-.637.438-1.415-.317-.995-.966l4.179-6.457a.706.706 0 0 1 .977-.21l3.87 2.505c.15.097.344.094.491-.007l4.362-3.008a.7.7 0 0 1 .364-.13"
+            />
+          </svg>
+        </a>
+      </div>
 
-  {% include "footer/footer.njk" %}
-
-</body>
-
+      <div class="relative">
+        <span
+          class="absolute inset-0 rounded-full bg-[#25D366] whatsapp-pulse motion-reduce:animate-none"
+        ></span>
+        <a
+          href="https://wa.me/{{ site.whatsapp }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with us on WhatsApp"
+          class="relative flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:scale-110 transition-transform duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="white"
+            class="w-7 h-7"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+            />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.856L.057 23.25a.75.75 0 00.918.919l5.453-1.479A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.696 9.696 0 01-4.964-1.36l-.355-.214-3.698 1.002.99-3.608-.233-.372A9.699 9.699 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </body>
 </html>

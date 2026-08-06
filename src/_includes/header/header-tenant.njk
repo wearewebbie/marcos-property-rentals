@@ -1,27 +1,28 @@
-<nav class="px-[40px] py-[20px]">
-    <div class="flex flex-row justify-between gap-[20px]">
-        <a href="/" class="heading-6-bold">Marcos Property Rentals</a>
-        {# {% image "src/assets/images/webbie-logo.png", "Description of image", "h-[20px]" %} #}
-        <ul class="flex-row gap-[20px] hidden lg:flex">
-            {%- for item in navigationTenant %}
-            {%- set isCurrent = false %}
-            {%- if item.url == '/' %}
-            {%- if page.url == '/' %}
-            {%- set isCurrent = true %}
-            {%- endif %}
-            {%- else %}
-            {%- if page.url.startsWith(item.url) %}
-            {%- set isCurrent = true %}
-            {%- endif %}
-            {%- endif %}
-            <li>
-                <a href="{{ item.url }}" class="
-            {%- if item.type == 'cta' %} text-pink-500{% endif %}
-            {%- if isCurrent %} text-red-500{% endif %}" {%- if isCurrent %} aria-current="page" {% endif %}>
-                    {{ item.label }}
-                </a>
-            </li>
-            {%- endfor %}
-        </ul>
-    </div>
+<nav class="bg-navy">
+  <div class="container h-[80px] flex flex-row justify-between items-center">
+    <a href="/" class="heading-5-bold text-eggshell">Marcos Property Rentals</a>
+    <ul class="flex-row gap-[30px] hidden lg:flex">
+      {%- for item in navigationTenant %} {%- set isCurrent = false %} {%- if
+      item.url == '/' %} {%- if page.url == '/' %} {%- set isCurrent = true %}
+      {%- endif %} {%- else %} {%- if page.url.startsWith(item.url) %} {%- set
+      isCurrent = true %} {%- endif %} {%- endif %}
+      <li>
+        <a
+          href="{{ item.url }}"
+          class="font-bold hover:underline underline-offset-[8px] py-[20px] {%- if isCurrent %} text-navy{% elif item.cta %} button-primary-peach{% else %} text-eggshell{% endif %}"
+          {%-
+          if
+          isCurrent
+          %}
+          aria-current="page"
+          {%
+          endif
+          %}
+        >
+          {{ item.label }}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
 </nav>
