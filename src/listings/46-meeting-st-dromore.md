@@ -1,13 +1,13 @@
 ---
 status: available
-propertyType: apartment
-heatingType: gas_central
-energyRating: C
+propertyType: house
+heatingType: oil
+energyRating: E
 furnishingType: unfurnished
-deposit: 1200
-price: 1200
+deposit: 800
+price: 800
 address:
-  street: 46 Meeting St
+  street: 46 Meeting Street
   city: Dromore
   county: Down
   postcode: BT251AJ
