@@ -14,7 +14,8 @@ address:
 bedrooms: 2
 bathrooms: 1
 receptions: 1
-description: A bright and cozy two-bedroom apartment in the heart of downtown, walking distance to shops and restaurants.
+description: A bright and cozy two-bedroom apartment in the heart of downtown,
+  walking distance to shops and restaurants.
 images:
   - url: src/assets/images/listings/46-meeting-st-dromore/living-room.svg
     alt: Living room
