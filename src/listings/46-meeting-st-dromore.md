@@ -17,8 +17,8 @@ receptions: 1
 description: A bright and cozy two-bedroom apartment in the heart of downtown,
   walking distance to shops and restaurants.
 images:
-  - url: src/assets/images/listings/46-meeting-st-dromore/living-room.svg
-    alt: Living room
+  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/92234edc-b983-48b3-a0a0-c349bd2f84fb.jpg
+    alt: Living Room
   - url: src/assets/images/listings/46-meeting-st-dromore/kitchen.svg
     alt: Kitchen
   - url: src/assets/images/listings/46-meeting-st-dromore/bedroom.svg
