@@ -14,8 +14,24 @@ address:
 bedrooms: 2
 bathrooms: 1
 receptions: 1
-description: A bright and cozy two-bedroom apartment in the heart of downtown,
-  walking distance to shops and restaurants.
+description: >+
+  Nestled in the heart of Dromore, this well-presented and surprisingly spacious
+  property offers an excellent blend of comfort and convenience. Ideally
+  positioned just a short walk from the town centre, schools, shops and a range
+  of local amenities. This home enjoys superb transport links with easy access
+  to the A1 dual carriageway making it an ideal choice for those commuting both
+  north and south.
+
+
+  Downstairs
+
+  The property opens into a bright and generously proportioned lounge, providing a welcoming space ideal for both everyday living and entertaining guests. The adjoining fitted kitchen is well-equipped with ample storage and worktop space, while a door to the rear leads directly to an enclosed, low-maintenance courtyard, perfect for outdoor use with minimal upkeep.
+
+
+  Upstairs
+
+  Comprising of a spacious master bedroom to the front of the property and a second bedroom to the rear, suitable for guests, children, or use as a home office. The first floor also includes a family bathroom fitted with a bath, shower, WC, and wash hand basin, all accessed from a central landing area. 
+
 images:
   - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/92234edc-b983-48b3-a0a0-c349bd2f84fb.jpg
     alt: Living Room
