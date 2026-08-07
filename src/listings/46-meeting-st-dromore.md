@@ -7,15 +7,20 @@ furnishingType: unfurnished
 deposit: 800
 price: 800
 address:
-  street: 46 Meeting St
+  street: 46 Meeting Street
   city: Dromore
   county: Down
   postcode: BT251AJ
 bedrooms: 2
 bathrooms: 1
 receptions: 1
-description: |-
-  Nestled in the heart of Dromore, this well-presented and surprisingly spacious property offers an excellent blend of comfort and convenience. Ideally positioned just a short walk from the town centre, schools, shops and a range of local amenities. This home enjoys superb transport links with easy access to the A1 dual carriageway making it an ideal choice for those commuting both north and south.
+description: >+
+  Nestled in the heart of Dromore, this well-presented and surprisingly spacious
+  property offers an excellent blend of comfort and convenience. Ideally
+  positioned just a short walk from the town centre, schools, shops and a range
+  of local amenities. This home enjoys superb transport links with easy access
+  to the A1 dual carriageway making it an ideal choice for those commuting both
+  north and south.
 
   Downstairs
 
@@ -24,6 +29,7 @@ description: |-
   Upstairs
 
   Comprising of a spacious master bedroom to the front of the property and a second bedroom to the rear, suitable for guests, children, or use as a home office. The first floor also includes a family bathroom fitted with a bath, shower, WC, and wash hand basin, all accessed from a central landing area.
+
 images:
   - url: src/assets/images/listings/46-meeting-st-dromore/image_1.png
     alt: Entrance
@@ -37,6 +43,7 @@ images:
     alt: Bedroom 1
   - url: src/assets/images/listings/46-meeting-st-dromore/image_6.png
     alt: Bedroom 2
+    
 featured: false
 availableFrom: 2026-08-07
 ---
