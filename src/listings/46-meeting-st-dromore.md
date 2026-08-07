@@ -1,11 +1,11 @@
 ---
 status: available
-propertyType: apartment
+propertyType: House
 heatingType: gas_central
 energyRating: C
 furnishingType: unfurnished
-deposit: 1200
-price: 1200
+deposit: 800
+price: 800
 address:
   street: 46 Meeting St
   city: Dromore
@@ -38,5 +38,5 @@ images:
   - url: src/assets/images/listings/46-meeting-st-dromore/image_6.png
     alt: Bedroom 2
 featured: false
-availableFrom: 2026-08-01
+availableFrom: 2026-08-07
 ---
