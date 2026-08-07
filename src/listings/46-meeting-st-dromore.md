@@ -1,6 +1,6 @@
 ---
 status: available
-propertyType: house
+propertyType: bungalow
 heatingType: oil
 energyRating: E
 furnishingType: unfurnished
