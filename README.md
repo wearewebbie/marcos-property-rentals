@@ -1,4 +1,4 @@
-# Marco's Property Rentals
+# Marco's Property Rental's
 
 This project uses [Eleventy](https://www.11ty.dev/) as a static site generator, [Tailwind CSS](https://tailwindcss.com/) for styling, and is hosted on [Cloudflare Pages](https://pages.cloudflare.com/) with automatic deployment via GitHub.
 
@@ -124,10 +124,10 @@ Deployment is handled automatically by Cloudflare Pages via GitHub. There is no 
 
 ### Branching strategy
 
-| Branch | Purpose | URL |
-|--------|---------|-----|
-| `dev` | Day to day development | Cloudflare preview URL |
-| `main` | Production | Live client domain |
+| Branch | Purpose                | URL                    |
+| ------ | ---------------------- | ---------------------- |
+| `dev`  | Day to day development | Cloudflare preview URL |
+| `main` | Production             | Live client domain     |
 
 ### Workflow
 

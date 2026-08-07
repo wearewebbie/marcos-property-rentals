@@ -1,5 +1,5 @@
 export default {
-  title: "Marco's Property Rentals",
+  title: "Marco's Property Rental's",
   description:
     "Northern Ireland letting agency connecting landlords with reliable, referenced tenants and guiding renters through a simple rental application process.",
   schemaType: "LocalBusiness",
