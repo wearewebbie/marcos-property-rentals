@@ -41,7 +41,7 @@ images:
     alt: Bedroom
   - url: src/assets/images/listings/46-meeting-st-dromore/bathroom.svg
     alt: Bathroom
-  - url: src/assets/images/listings/46-meeting-st-dromore/exterior.svg
+  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/img_6177.jpg
     alt: Exterior
 featured: false
 availableFrom: 2026-08-01
