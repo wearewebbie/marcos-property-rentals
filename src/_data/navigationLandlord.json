@@ -1,19 +1,19 @@
 [
-    {
-        "label": "Packages",
-        "url": "/landlord/#packages"
-    },
-    {
-        "label": "Why Choose Us",
-        "url": "/landlord/#why-choose-us"
-    },
-    {
-        "label": "F&AQs",
-        "url": "/landlord/#faqs"
-    },
-    {
-        "label": "Contact",
-        "url": "/landlord/#contact",
-        "cta": true
-    }
+  {
+    "label": "Packages",
+    "url": "/landlord/#packages"
+  },
+  {
+    "label": "Why Choose Us",
+    "url": "/landlord/#why-choose-us"
+  },
+  {
+    "label": "FAQs",
+    "url": "/landlord/#faqs"
+  },
+  {
+    "label": "Contact",
+    "url": "/landlord/#contact",
+    "cta": true
+  }
 ]
