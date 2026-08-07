@@ -35,9 +35,9 @@ description: >+
 images:
   - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/92234edc-b983-48b3-a0a0-c349bd2f84fb.jpg
     alt: Living Room
-  - url: src/assets/images/listings/46-meeting-st-dromore/kitchen.svg
+  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/img_6166.jpg
     alt: Kitchen
-  - url: src/assets/images/listings/46-meeting-st-dromore/bedroom.svg
+  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/img_6175.jpg
     alt: Bedroom
   - url: src/assets/images/listings/46-meeting-st-dromore/bathroom.svg
     alt: Bathroom
