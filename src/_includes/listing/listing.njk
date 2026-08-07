@@ -313,7 +313,15 @@ layout: base/base.njk
           data-reveal-delay="100"
         >
           <h2 class="heading-5-bold text-navy">About this property</h2>
-          <p class="body-normal text-navy">{{ description }}</p>
+          <div class="flex flex-col gap-[12px]">
+            {% for paragraph in description.split("\n\n") %}
+              {% if " " in paragraph %}
+                <p class="body-normal text-navy">{{ paragraph }}</p>
+              {% else %}
+                <p class="body-bold text-navy">{{ paragraph }}</p>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
 
         <div

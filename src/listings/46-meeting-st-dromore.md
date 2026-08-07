@@ -1,8 +1,8 @@
 ---
 status: available
-propertyType: bungalow
+propertyType: House
 heatingType: oil
-energyRating: E
+energyRating: C
 furnishingType: unfurnished
 deposit: 800
 price: 800
@@ -22,27 +22,28 @@ description: >+
   to the A1 dual carriageway making it an ideal choice for those commuting both
   north and south.
 
-
   Downstairs
 
   The property opens into a bright and generously proportioned lounge, providing a welcoming space ideal for both everyday living and entertaining guests. The adjoining fitted kitchen is well-equipped with ample storage and worktop space, while a door to the rear leads directly to an enclosed, low-maintenance courtyard, perfect for outdoor use with minimal upkeep.
 
-
   Upstairs
 
-  Comprising of a spacious master bedroom to the front of the property and a second bedroom to the rear, suitable for guests, children, or use as a home office. The first floor also includes a family bathroom fitted with a bath, shower, WC, and wash hand basin, all accessed from a central landing area. 
+  Comprising of a spacious master bedroom to the front of the property and a second bedroom to the rear, suitable for guests, children, or use as a home office. The first floor also includes a family bathroom fitted with a bath, shower, WC, and wash hand basin, all accessed from a central landing area.
 
 images:
-  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/92234edc-b983-48b3-a0a0-c349bd2f84fb.jpg
+  - url: src/assets/images/listings/46-meeting-st-dromore/image_1.png
+    alt: Entrance
+  - url: src/assets/images/listings/46-meeting-st-dromore/image_2.png
     alt: Living Room
-  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/img_6166.jpg
+  - url: src/assets/images/listings/46-meeting-st-dromore/image_3.png
     alt: Kitchen
-  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/img_6175.jpg
-    alt: Bedroom
-  - url: src/assets/images/listings/46-meeting-st-dromore/bathroom.svg
+  - url: src/assets/images/listings/46-meeting-st-dromore/image_4.png
     alt: Bathroom
-  - url: /assets/images/listings/map-public_folder-assets-images-receptions-1-energyrating-e-bathrooms-1-filename-46-meeting-st-dromore-price-800-furnishingtype-unfurnished-heatingtype-oil-featured-false-propertytype-house-status/img_6177.jpg
-    alt: Exterior
+  - url: src/assets/images/listings/46-meeting-st-dromore/image_5.png
+    alt: Bedroom 1
+  - url: src/assets/images/listings/46-meeting-st-dromore/image_6.png
+    alt: Bedroom 2
+
 featured: false
-availableFrom: 2026-08-01
+availableFrom: 2026-08-07
 ---
