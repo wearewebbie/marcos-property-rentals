@@ -1,7 +1,7 @@
 ---
 status: available
 propertyType: House
-heatingType: gas_central
+heatingType: oil
 energyRating: C
 furnishingType: unfurnished
 deposit: 800
@@ -43,7 +43,7 @@ images:
     alt: Bedroom 1
   - url: src/assets/images/listings/46-meeting-st-dromore/image_6.png
     alt: Bedroom 2
-    
+
 featured: false
 availableFrom: 2026-08-07
 ---
